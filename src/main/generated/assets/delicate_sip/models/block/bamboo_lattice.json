@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/ladder",
   "textures": {
-    "all": "delicate_sip:block/bamboo_lattice"
+    "particle": "delicate_sip:block/bamboo_lattice",
+    "texture": "delicate_sip:block/bamboo_lattice"
   }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "delicate_sip:block/cherry_lattice"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "delicate_sip:block/cherry_lattice"
+  }
 }

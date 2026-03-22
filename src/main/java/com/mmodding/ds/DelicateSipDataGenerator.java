@@ -7,8 +7,10 @@ import com.mmodding.library.datagen.api.family.BlockFamilyProcessor;
 import com.mmodding.library.datagen.api.lang.DefaultLangProcessors;
 import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultContentTypes;
+import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.block.Block;
+import net.minecraft.block.LadderBlock;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.RegistryKeys;
@@ -17,9 +19,10 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 
 	@Override
 	public void setupManager(DataManager manager) {
-		manager.data(DelicateSipBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, BlockStateModelGenerator::registerSimpleCubeAll);
-		manager.data(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
-		manager.data(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.BLOCK), DefaultLangProcessors.getClassic());
+		manager.chain(DelicateSipBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, block -> block instanceof LadderBlock, DefaultBlockModelProcessing::ladder)
+				.chain(BlockStateModelGenerator::registerSimpleCubeAll);
+		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
+		manager.task(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.BLOCK), DefaultLangProcessors.getClassic());
 	}
 
 	@Override

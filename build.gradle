@@ -63,6 +63,7 @@ mmodding {
 		environment = EnvironmentTarget.ANY
 		withEntrypoints {
 			it.init("com.mmodding.ds.DelicateSip")
+			it.client("com.mmodding.ds.client.DelicateSipClient")
 			it.custom("fabric-datagen", "com.mmodding.ds.DelicateSipDataGenerator")
 		}
 		addMixin("delicate_sip.mixins.json")

@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "delicate_sip:block/spruce_lattice",
+      "y": 90
+    },
+    "facing=north": {
       "model": "delicate_sip:block/spruce_lattice"
+    },
+    "facing=south": {
+      "model": "delicate_sip:block/spruce_lattice",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "delicate_sip:block/spruce_lattice",
+      "y": 270
     }
   }
 }

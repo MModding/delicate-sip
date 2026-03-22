@@ -11,6 +11,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+import java.util.List;
 import java.util.Set;
 
 public class DelicateSip implements ExtendedModInitializer {
@@ -35,7 +36,19 @@ public class DelicateSip implements ExtendedModInitializer {
 		Registry.register(Registries.ITEM_GROUP, Identifier.of("delicate_sip", "item_group"), DelicateSip.ITEM_GROUP);
 	}
 
+	public static List<String> fromWood(String suffix) {
+		return DelicateSip.WOOD_SETS.stream().map(name -> name + "_" + suffix).toList();
+	}
+
+	public static List<String> fromWood(String prefix, String suffix) {
+		return DelicateSip.WOOD_SETS.stream().map(name -> prefix + "_" + name + "_" + suffix).toList();
+	}
+
 	public static Identifier createId(String path) {
-		return Identifier.of("delicate_sip", path);
+		return Identifier.of(DelicateSip.namespace(), path);
+	}
+
+	public static String namespace() {
+		return "delicate_sip";
 	}
 }

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "delicate_sip:block/birch_round_window_top_left"
+  }
+}
