@@ -28,9 +28,40 @@ public class DelicateSipBlocks {
 	public static final BlockHeap WINDOW_TILE_PANES = BlockHeap.create(DelicateSip.createId("window_tile_panes"), PaneBlock::new, FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never), DelicateSip.fromWood("window_tile_pane")).withItem(new FabricItemSettings());
 	public static final BlockHeap CUT_BLOCKS = BlockHeap.create(DelicateSip.createId("cut_blocks"), Block::new, FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("cut", "block")).withItem(new FabricItemSettings());
 
-	public static final BlockRelatives BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("black_marble"), settings -> settings.mapColor(DyeColor.BLACK), true);
-	public static final BlockRelatives WHITE_MARBLE = BlockRelatives.createStone(DelicateSip.createId("white_marble"), settings -> settings.mapColor(DyeColor.WHITE), true);
-	public static final BlockRelatives VERDANT_MARBLE = BlockRelatives.createStone(DelicateSip.createId("verdant_marble"), settings -> settings.mapColor(DyeColor.GREEN), true);
+	public static final BlockRelatives BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CRACKED_BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives BASALT_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("basalt_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives BASALT_TILES = BlockRelatives.createStone(DelicateSip.createId("basalt_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CHISELED_BASALT = BlockRelatives.createStone(DelicateSip.createId("chiseled_basalt"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives POLISHED_BASALT = BlockRelatives.createStone(DelicateSip.createId("polished_basalt"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+
+	public static final BlockRelatives MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
+	public static final BlockRelatives ALIGNED_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
+	public static final BlockRelatives ALIGNED_WARM_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_warm_mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
+
+	public static final BlockRelatives BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("black_marble"), settings -> settings.mapColor(DyeColor.BLACK), true, false);
+	public static final BlockRelatives SMOOTH_BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("smooth_black_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives BLACK_MARBLE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("black_marble_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CRACKED_BLACK_MARBLE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_black_marble_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives BLACK_MARBLE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("black_marble_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives BLACK_MARBLE_TILES = BlockRelatives.createStone(DelicateSip.createId("black_marble_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CHISELED_BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("chiseled_black_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+
+	public static final BlockRelatives WHITE_MARBLE = BlockRelatives.createStone(DelicateSip.createId("white_marble"), settings -> settings.mapColor(DyeColor.WHITE), true, false);
+	public static final BlockRelatives SMOOTH_WHITE_MARBLE = BlockRelatives.createStone(DelicateSip.createId("smooth_white_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives WHITE_MARBLE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("white_marble_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CRACKED_WHITE_MARBLE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_white_marble_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives WHITE_MARBLE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("white_marble_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives WHITE_MARBLE_TILES = BlockRelatives.createStone(DelicateSip.createId("white_marble_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CHISELED_WHITE_MARBLE = BlockRelatives.createStone(DelicateSip.createId("chiseled_white_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+
+	public static final BlockRelatives VERDANT_MARBLE = BlockRelatives.createStone(DelicateSip.createId("verdant_marble"), settings -> settings.mapColor(DyeColor.GREEN), true, false);
+	public static final BlockRelatives SMOOTH_VERDANT_MARBLE = BlockRelatives.createStone(DelicateSip.createId("smooth_verdant_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives VERDANT_MARBLE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("verdant_marble_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CRACKED_VERDANT_MARBLE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_verdant_marble_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives VERDANT_MARBLE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("verdant_marble_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives VERDANT_MARBLE_TILES = BlockRelatives.createStone(DelicateSip.createId("verdant_marble_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CHISELED_VERDANT_MARBLE = BlockRelatives.createStone(DelicateSip.createId("chiseled_verdant_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
 	public static void register(AdvancedContainer mod) {
 		BEAMS.register(mod::createId);
@@ -47,8 +78,35 @@ public class DelicateSipBlocks {
 		WINDOW_TILES.register(mod::createId);
 		WINDOW_TILE_PANES.register(mod::createId);
 		CUT_BLOCKS.register(mod::createId);
+		BASALT_BRICKS.register();
+		BASALT_FLAGSTONES.register();
+		BASALT_TILES.register();
+		CHISELED_BASALT.register();
+		CRACKED_BASALT_BRICKS.register();
+		POLISHED_BASALT.register();
+		MIXED_BRICKS.register();
+		ALIGNED_MIXED_BRICKS.register();
+		ALIGNED_WARM_MIXED_BRICKS.register();
 		BLACK_MARBLE.register();
+		SMOOTH_BLACK_MARBLE.register();
+		BLACK_MARBLE_BRICKS.register();
+		CRACKED_BLACK_MARBLE_BRICKS.register();
+		BLACK_MARBLE_FLAGSTONES.register();
+		BLACK_MARBLE_TILES.register();
+		CHISELED_BLACK_MARBLE.register();
 		WHITE_MARBLE.register();
+		SMOOTH_WHITE_MARBLE.register();
+		WHITE_MARBLE_BRICKS.register();
+		CRACKED_WHITE_MARBLE_BRICKS.register();
+		WHITE_MARBLE_FLAGSTONES.register();
+		WHITE_MARBLE_TILES.register();
+		CHISELED_WHITE_MARBLE.register();
 		VERDANT_MARBLE.register();
+		SMOOTH_VERDANT_MARBLE.register();
+		VERDANT_MARBLE_BRICKS.register();
+		CRACKED_VERDANT_MARBLE_BRICKS.register();
+		VERDANT_MARBLE_FLAGSTONES.register();
+		VERDANT_MARBLE_TILES.register();
+		CHISELED_VERDANT_MARBLE.register();
 	}
 }

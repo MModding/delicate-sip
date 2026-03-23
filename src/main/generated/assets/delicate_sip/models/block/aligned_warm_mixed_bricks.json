@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "delicate_sip:block/aligned_warm_mixed_bricks"
+  }
+}

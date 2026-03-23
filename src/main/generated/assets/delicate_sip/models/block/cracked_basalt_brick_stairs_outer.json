@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "delicate_sip:block/cracked_basalt_bricks",
+    "side": "delicate_sip:block/cracked_basalt_bricks",
+    "top": "delicate_sip:block/cracked_basalt_bricks"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "delicate_sip:block/white_marble_flagstones",
+    "side": "delicate_sip:block/white_marble_flagstones",
+    "top": "delicate_sip:block/white_marble_flagstones"
+  }
+}

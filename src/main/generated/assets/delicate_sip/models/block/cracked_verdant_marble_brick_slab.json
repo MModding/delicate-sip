@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "delicate_sip:block/cracked_verdant_marble_bricks",
+    "side": "delicate_sip:block/cracked_verdant_marble_bricks",
+    "top": "delicate_sip:block/cracked_verdant_marble_bricks"
+  }
+}

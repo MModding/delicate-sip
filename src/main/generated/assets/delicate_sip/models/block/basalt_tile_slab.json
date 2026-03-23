@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "delicate_sip:block/basalt_tiles",
+    "side": "delicate_sip:block/basalt_tiles",
+    "top": "delicate_sip:block/basalt_tiles"
+  }
+}

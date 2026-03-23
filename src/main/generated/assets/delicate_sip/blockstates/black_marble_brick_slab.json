@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/black_marble_brick_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/black_marble_bricks"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/black_marble_brick_slab_top"
+    }
+  }
+}

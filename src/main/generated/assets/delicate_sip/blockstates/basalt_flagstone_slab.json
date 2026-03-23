@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/basalt_flagstone_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/basalt_flagstones"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/basalt_flagstone_slab_top"
+    }
+  }
+}

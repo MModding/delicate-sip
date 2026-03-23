@@ -21,7 +21,7 @@ public class DelicateSip implements ExtendedModInitializer {
 	public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
 			.displayName(Text.of("Delicate Sip"))
 			.icon(() -> Registries.ITEM.get(Identifier.of("delicate_sip", "acacia_lattice")).getDefaultStack())
-			.entries((ctx, entries) -> Registries.ITEM.stream().filter(item -> Registries.ITEM.getId(item).getNamespace().equals("delicate_sip")).forEachOrdered(entries::add))
+			.entries((ctx, entries) -> Registries.ITEM.stream().filter(item -> Registries.ITEM.getId(item).getNamespace().equals(DelicateSip.namespace())).forEachOrdered(entries::add))
 			.build();
 
 	@Override
