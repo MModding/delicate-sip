@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "delicate_sip:block/pale_oak_round_window_bottom_right"
-  }
-}

@@ -1,5 +1,7 @@
 package com.mmodding.ds;
 
+import com.mmodding.ds.block.RoundWindowBlock;
+import com.mmodding.ds.block.RoundWindowPaneBlock;
 import com.mmodding.ds.init.DelicateSipBlocks;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.datagen.api.ExtendedDataGeneratorEntrypoint;
@@ -21,6 +23,8 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 	@Override
 	public void setupManager(DataManager manager) {
 		manager.chain(DelicateSipBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, block -> block instanceof LadderBlock, DefaultBlockModelProcessing::ladder)
+			.chain(block -> block instanceof RoundWindowBlock, DelicateSipDataProcessors::registerDelicateSipRoundWindow)
+			.chain(block -> block instanceof RoundWindowPaneBlock, DelicateSipDataProcessors::registerDelicateSipRoundWindowPane)
 			.chain(block -> block instanceof PaneBlock, DelicateSipDataProcessors::registerDelicateSipWoodPane)
 			.chain(BlockStateModelGenerator::registerSimpleCubeAll);
 		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());

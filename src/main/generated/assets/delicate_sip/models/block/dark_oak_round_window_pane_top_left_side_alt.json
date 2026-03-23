@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/template_glass_pane_side_alt",
   "textures": {
-    "edge": "delicate_sip:block/dark_pane_top",
+    "edge": "delicate_sip:block/dark_oak_pane_top",
     "pane": "delicate_sip:block/dark_oak_round_window_top_left"
   }
 }
