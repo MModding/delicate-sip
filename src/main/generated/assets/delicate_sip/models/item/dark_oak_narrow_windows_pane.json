@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "delicate_sip:block/dark_oak_narrow_windows"
+  }
+}

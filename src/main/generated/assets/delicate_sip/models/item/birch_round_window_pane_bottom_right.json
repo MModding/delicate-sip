@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "delicate_sip:block/birch_round_window_bottom_right"
+  }
+}

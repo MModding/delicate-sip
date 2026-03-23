@@ -11,8 +11,11 @@ import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.block.LadderBlock;
+import net.minecraft.block.PaneBlock;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 
 public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint {
@@ -20,11 +23,24 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 	@Override
 	public void setupManager(DataManager manager) {
 		manager.chain(DelicateSipBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, block -> block instanceof LadderBlock, DefaultBlockModelProcessing::ladder)
-				.chain(BlockStateModelGenerator::registerSimpleCubeAll);
+			.chain(block -> block instanceof PaneBlock, DelicateSipDataGenerator::registerDelicateSipWoodPane)
+			.chain(BlockStateModelGenerator::registerSimpleCubeAll);
 		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
 		manager.task(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.BLOCK), DefaultLangProcessors.getClassic());
 	}
 
 	@Override
 	public void onInitializeDataGenerator(AdvancedContainer advancedContainer, FabricDataGenerator generator, FabricDataGenerator.Pack pack) {}
+
+	private static void registerDelicateSipWoodPane(BlockStateModelGenerator generator, Block paneBlock) {
+		RegistryKey<Block> paneKey = paneBlock.getRegistryEntry().getKey().orElseThrow();
+		RegistryKey<Block> glassKey = paneKey.mapValue(value -> value.withPath(path -> path.replace("_pane", "")));
+		if (!Registries.BLOCK.contains(glassKey)) {
+			glassKey = paneKey.mapValue(value -> value.withPath(path -> path.replace("_pane", "s")));
+		}
+		Block glassBlock = Registries.BLOCK.get(glassKey);
+		String woodSet = paneKey.getValue().getPath().split("_")[0];
+		String paneTop = woodSet + "_pane_top";
+		DefaultBlockModelProcessing.pane(generator, glassBlock, paneBlock, DelicateSip.createId(paneTop));
+	}
 }

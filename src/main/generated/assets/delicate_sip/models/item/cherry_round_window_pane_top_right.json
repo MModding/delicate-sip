@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "delicate_sip:block/cherry_round_window_top_right"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "edge": "delicate_sip:bamboo_pane_top",
+    "pane": "delicate_sip:block/bamboo_round_window_bottom_right"
+  }
+}

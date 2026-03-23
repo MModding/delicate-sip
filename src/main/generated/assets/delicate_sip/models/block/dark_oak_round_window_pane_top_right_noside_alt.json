@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_glass_pane_noside_alt",
+  "textures": {
+    "pane": "delicate_sip:block/dark_oak_round_window_top_right"
+  }
+}

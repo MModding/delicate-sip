@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "delicate_sip:oak_pane_top",
+    "pane": "delicate_sip:block/oak_window_tiles"
+  }
+}
