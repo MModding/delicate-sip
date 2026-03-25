@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right_open",
+  "textures": {
+    "bottom": "delicate_sip:block/plain_spruce_trapdoor_bottom",
+    "top": "delicate_sip:block/plain_spruce_trapdoor_top"
+  }
+}

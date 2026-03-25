@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "delicate_sip:block/cork",
+    "side": "delicate_sip:block/cork",
+    "top": "delicate_sip:block/cork"
+  }
+}

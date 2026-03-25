@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "delicate_sip:block/waxed_oak_trapdoor_bottom",
+    "top": "delicate_sip:block/waxed_oak_trapdoor_top"
+  }
+}

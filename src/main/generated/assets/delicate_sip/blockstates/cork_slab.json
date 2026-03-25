@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/cork_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/cork"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/cork_slab_top"
+    }
+  }
+}

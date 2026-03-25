@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "delicate_sip:block/waxed_bamboo_trapdoor_bottom",
+    "top": "delicate_sip:block/waxed_bamboo_trapdoor_top"
+  }
+}

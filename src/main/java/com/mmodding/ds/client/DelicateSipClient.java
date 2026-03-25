@@ -19,5 +19,7 @@ public class DelicateSipClient implements ClientModInitializer {
 		DelicateSipBlocks.WINDOW_PANES.cutout();
 		DelicateSipBlocks.WINDOW_TILES.cutout();
 		DelicateSipBlocks.WINDOW_TILE_PANES.cutout();
+		DelicateSipBlocks.WAXED_DOORS.cutout();
+		DelicateSipBlocks.WAXED_TRAPDOORS.cutout();
 	}
 }

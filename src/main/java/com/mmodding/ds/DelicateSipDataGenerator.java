@@ -11,10 +11,7 @@ import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultContentTypes;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import net.minecraft.block.Block;
-import net.minecraft.block.DoorBlock;
-import net.minecraft.block.LadderBlock;
-import net.minecraft.block.PaneBlock;
+import net.minecraft.block.*;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.RegistryKeys;
@@ -28,6 +25,7 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 			.chain(block -> block instanceof RoundWindowPaneBlock, DelicateSipDataProcessors::registerDelicateSipRoundWindowPane)
 			.chain(block -> block instanceof PaneBlock, DelicateSipDataProcessors::registerDelicateSipWoodPane)
 			.chain(block -> block instanceof DoorBlock, BlockStateModelGenerator::registerDoor)
+			.chain(block -> block instanceof TrapdoorBlock, BlockStateModelGenerator::registerOrientableTrapdoor)
 			.chain(BlockStateModelGenerator::registerSimpleCubeAll);
 		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
 		manager.task(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.BLOCK), DefaultLangProcessors.getClassic());
