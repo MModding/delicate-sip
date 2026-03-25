@@ -10,7 +10,9 @@ import com.mmodding.library.datagen.api.lang.DefaultLangProcessors;
 import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultContentTypes;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
+import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.*;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.family.BlockFamily;
@@ -32,5 +34,21 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 	}
 
 	@Override
-	public void onInitializeDataGenerator(AdvancedContainer advancedContainer, FabricDataGenerator generator, FabricDataGenerator.Pack pack) {}
+	public void onInitializeDataGenerator(AdvancedContainer advancedContainer, FabricDataGenerator generator, FabricDataGenerator.Pack pack) {
+		pack.addProvider((output, future) -> new DelicateSipLanguageProvider(output));
+	}
+
+	private static class DelicateSipLanguageProvider extends MModdingLanguageProvider {
+
+		protected DelicateSipLanguageProvider(FabricDataOutput dataOutput) {
+			super(dataOutput);
+		}
+
+		@Override
+		public void generateTranslations(TranslationBuilder builder) {
+			builder.add("itemGroup.delicate_sip.wood", "Delicate Sip - Wood");
+			builder.add("itemGroup.delicate_sip.stone", "Delicate Sip - Stone");
+			builder.add("itemGroup.delicate_sip.metal", "Delicate Sip - Metal");
+		}
+	}
 }

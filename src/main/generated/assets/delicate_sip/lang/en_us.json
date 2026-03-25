@@ -404,5 +404,8 @@
   "block.delicate_sip.white_marble_stairs": "White Marble Stairs",
   "block.delicate_sip.white_marble_tile_slab": "White Marble Tiles Slab",
   "block.delicate_sip.white_marble_tile_stairs": "White Marble Tiles Stairs",
-  "block.delicate_sip.white_marble_tiles": "White Marble Tiles"
+  "block.delicate_sip.white_marble_tiles": "White Marble Tiles",
+  "itemGroup.delicate_sip.metal": "Delicate Sip - Metal",
+  "itemGroup.delicate_sip.stone": "Delicate Sip - Stone",
+  "itemGroup.delicate_sip.wood": "Delicate Sip - Wood"
 }
