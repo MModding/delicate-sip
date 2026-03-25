@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "delicate_sip:item/waxed_acacia_trapdoor"
-  }
+  "parent": "delicate_sip:block/waxed_acacia_trapdoor_bottom"
 }

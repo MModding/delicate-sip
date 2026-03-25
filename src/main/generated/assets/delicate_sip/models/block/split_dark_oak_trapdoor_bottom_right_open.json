@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right_open",
-  "textures": {
-    "bottom": "delicate_sip:block/split_dark_oak_trapdoor_bottom",
-    "top": "delicate_sip:block/split_dark_oak_trapdoor_top"
-  }
-}

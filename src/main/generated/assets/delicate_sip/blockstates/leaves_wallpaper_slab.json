@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/leaves_wallpaper_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/leaves_wallpaper"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/leaves_wallpaper_slab_top"
+    }
+  }
+}

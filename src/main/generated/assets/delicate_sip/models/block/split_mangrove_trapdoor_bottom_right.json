@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right",
-  "textures": {
-    "bottom": "delicate_sip:block/split_mangrove_trapdoor_bottom",
-    "top": "delicate_sip:block/split_mangrove_trapdoor_top"
-  }
-}

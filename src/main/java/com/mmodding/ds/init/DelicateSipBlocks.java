@@ -30,11 +30,10 @@ public class DelicateSipBlocks {
 	public static final BlockHeap CLOSET_DOORS = BlockHeap.create(DelicateSip.createId("closet_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("closet", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("closet", "door")).withItem(new FabricItemSettings());
 	public static final BlockHeap CLOSET_TRAPDOORS = BlockHeap.create(DelicateSip.createId("closet_trapdoors"), (name, settings) -> new TrapdoorBlock(settings, DelicateSip.getVanillaSet("closet", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("closet", "trapdoor")).withItem(new FabricItemSettings());
 	public static final BlockHeap PLAIN_DOORS = BlockHeap.create(DelicateSip.createId("plain_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("plain", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("plain", "door")).withItem(new FabricItemSettings());
-	public static final BlockHeap PLAIN_TRAPDOORS = BlockHeap.create(DelicateSip.createId("plain_trapdoors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("plain", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("plain", "trapdoor")).withItem(new FabricItemSettings());
+	public static final BlockHeap PLAIN_TRAPDOORS = BlockHeap.create(DelicateSip.createId("plain_trapdoors"), (name, settings) -> new TrapdoorBlock(settings, DelicateSip.getVanillaSet("plain", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("plain", "trapdoor")).withItem(new FabricItemSettings());
 	public static final BlockHeap SPLIT_DOORS = BlockHeap.create(DelicateSip.createId("split_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("split", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("split", "door")).withItem(new FabricItemSettings());
-	public static final BlockHeap SPLIT_TRAPDOORS = BlockHeap.create(DelicateSip.createId("split_trapdoors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("split", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("split", "trapdoor")).withItem(new FabricItemSettings());
-	public static final BlockHeap WAXED_DOORS = BlockHeap.create(DelicateSip.createId("waxed_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("waxed", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("waxed", "door")).withItem(new FabricItemSettings());
-	public static final BlockHeap WAXED_TRAPDOORS = BlockHeap.create(DelicateSip.createId("waxed_trapdoors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("waxed", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("waxed", "trapdoor")).withItem(new FabricItemSettings());
+	public static final BlockHeap WAXED_DOORS = BlockHeap.create(DelicateSip.createId("waxed_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("waxed", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque(), DelicateSip.fromWood("waxed", "door")).withItem(new FabricItemSettings());
+	public static final BlockHeap WAXED_TRAPDOORS = BlockHeap.create(DelicateSip.createId("waxed_trapdoors"), (name, settings) -> new TrapdoorBlock(settings, DelicateSip.getVanillaSet("waxed", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque(), DelicateSip.fromWood("waxed", "trapdoor")).withItem(new FabricItemSettings());
 
 	public static final BlockRelatives BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives CRACKED_BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
@@ -60,6 +59,10 @@ public class DelicateSipBlocks {
 	public static final BlockRelatives ALIGNED_WARM_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_warm_mixed_brick"), true, settings -> settings.mapColor(DyeColor.GRAY), false, false);
 
 	public static final BlockRelatives CORK = BlockRelatives.createStone(DelicateSip.createId("cork"), false, settings -> settings.mapColor(DyeColor.YELLOW), false, false);
+
+	public static final BlockRelatives BLOOMS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("blooms_wallpaper"), settings -> settings, false, false);
+	public static final BlockRelatives FEATHERS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("feathers_wallpaper"), settings -> settings, false, false);
+	public static final BlockRelatives LEAVES_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("leaves_wallpaper"), settings -> settings, false, false);
 
 	public static final BlockRelatives DEEPSLATE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("deepslate_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
@@ -107,7 +110,6 @@ public class DelicateSipBlocks {
 		PLAIN_DOORS.register(mod::createId);
 		PLAIN_TRAPDOORS.register(mod::createId);
 		SPLIT_DOORS.register(mod::createId);
-		SPLIT_TRAPDOORS.register(mod::createId);
 		WAXED_DOORS.register(mod::createId);
 		WAXED_TRAPDOORS.register(mod::createId);
 		BASALT_BRICKS.register();
@@ -128,6 +130,9 @@ public class DelicateSipBlocks {
 		ALIGNED_MIXED_BRICKS.register();
 		ALIGNED_WARM_MIXED_BRICKS.register();
 		CORK.register();
+		BLOOMS_WALLPAPER.register();
+		FEATHERS_WALLPAPER.register();
+		LEAVES_WALLPAPER.register();
 		DEEPSLATE_FLAGSTONES.register();
 		BLACK_MARBLE.register();
 		SMOOTH_BLACK_MARBLE.register();

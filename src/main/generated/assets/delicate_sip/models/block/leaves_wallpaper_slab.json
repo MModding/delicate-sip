@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "delicate_sip:block/leaves_wallpaper",
+    "side": "delicate_sip:block/leaves_wallpaper",
+    "top": "delicate_sip:block/leaves_wallpaper"
+  }
+}
