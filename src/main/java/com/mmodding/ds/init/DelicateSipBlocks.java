@@ -27,6 +27,9 @@ public class DelicateSipBlocks {
 	public static final BlockHeap WINDOW_TILES = BlockHeap.create(DelicateSip.createId("window_tiles"), GlassBlock::new, FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never), DelicateSip.fromWood("window_tiles")).withItem(new FabricItemSettings());
 	public static final BlockHeap WINDOW_TILE_PANES = BlockHeap.create(DelicateSip.createId("window_tile_panes"), PaneBlock::new, FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never), DelicateSip.fromWood("window_tile_pane")).withItem(new FabricItemSettings());
 	public static final BlockHeap CUT_BLOCKS = BlockHeap.create(DelicateSip.createId("cut_blocks"), Block::new, FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("cut", "block")).withItem(new FabricItemSettings());
+	public static final BlockHeap CLOSET_DOORS = BlockHeap.create(DelicateSip.createId("closet_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("closet", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("closet", "door")).withItem(new FabricItemSettings());
+	public static final BlockHeap PLAIN_DOORS = BlockHeap.create(DelicateSip.createId("plain_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("plain", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("plain", "door")).withItem(new FabricItemSettings());
+	public static final BlockHeap SPLIT_DOORS = BlockHeap.create(DelicateSip.createId("split_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("split", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD), DelicateSip.fromWood("split", "door")).withItem(new FabricItemSettings());
 
 	public static final BlockRelatives BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives CRACKED_BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
@@ -38,6 +41,8 @@ public class DelicateSipBlocks {
 	public static final BlockRelatives MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
 	public static final BlockRelatives ALIGNED_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
 	public static final BlockRelatives ALIGNED_WARM_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_warm_mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
+
+	public static final BlockRelatives DEEPSLATE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("deepslate_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
 	public static final BlockRelatives BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("black_marble"), settings -> settings.mapColor(DyeColor.BLACK), true, false);
 	public static final BlockRelatives SMOOTH_BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("smooth_black_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
@@ -78,6 +83,9 @@ public class DelicateSipBlocks {
 		WINDOW_TILES.register(mod::createId);
 		WINDOW_TILE_PANES.register(mod::createId);
 		CUT_BLOCKS.register(mod::createId);
+		CLOSET_DOORS.register(mod::createId);
+		PLAIN_DOORS.register(mod::createId);
+		SPLIT_DOORS.register(mod::createId);
 		BASALT_BRICKS.register();
 		BASALT_FLAGSTONES.register();
 		BASALT_TILES.register();
@@ -87,6 +95,7 @@ public class DelicateSipBlocks {
 		MIXED_BRICKS.register();
 		ALIGNED_MIXED_BRICKS.register();
 		ALIGNED_WARM_MIXED_BRICKS.register();
+		DEEPSLATE_FLAGSTONES.register();
 		BLACK_MARBLE.register();
 		SMOOTH_BLACK_MARBLE.register();
 		BLACK_MARBLE_BRICKS.register();

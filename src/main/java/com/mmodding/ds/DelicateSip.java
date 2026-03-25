@@ -5,6 +5,7 @@ import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.core.api.ExtendedModInitializer;
 import com.mmodding.library.core.api.management.ElementsManager;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.block.BlockSetType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -16,7 +17,7 @@ import java.util.Set;
 
 public class DelicateSip implements ExtendedModInitializer {
 
-	public static final Set<String> WOOD_SETS = Set.of("acacia", "bamboo", "birch", "cherry", "dark_oak", "mangrove", "oak", "pale_oak", "spruce");
+	public static final Set<String> WOOD_SETS = Set.of("acacia", "bamboo", "birch", "cherry", "dark_oak", "mangrove", "oak", /* "pale_oak", */ "spruce");
 
 	public static final ItemGroup ITEM_GROUP = FabricItemGroup.builder()
 			.displayName(Text.of("Delicate Sip"))
@@ -42,6 +43,20 @@ public class DelicateSip implements ExtendedModInitializer {
 
 	public static List<String> fromWood(String prefix, String suffix) {
 		return DelicateSip.WOOD_SETS.stream().map(name -> prefix + "_" + name + "_" + suffix).toList();
+	}
+
+	public static BlockSetType getVanillaSet(String name, String suffixToRemove) {
+		return BlockSetType.stream()
+			.filter(type -> type.name().equals(name.replace("_" + suffixToRemove, "")))
+			.findFirst()
+			.orElseThrow();
+	}
+
+	public static BlockSetType getVanillaSet(String prefixToRemove, String name, String suffixToRemove) {
+		return BlockSetType.stream()
+			.filter(type -> type.name().equals(name.replace(prefixToRemove + "_", "").replace("_" + suffixToRemove, "")))
+			.findFirst()
+			.orElseThrow();
 	}
 
 	public static Identifier createId(String path) {

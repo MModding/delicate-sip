@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_right",
+  "textures": {
+    "bottom": "delicate_sip:block/closet_acacia_door_bottom",
+    "top": "delicate_sip:block/closet_acacia_door_top"
+  }
+}

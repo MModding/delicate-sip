@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_deepslate_flagstones": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delicate_sip:deepslate_flagstones"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:deepslate_flagstone_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_deepslate_flagstones",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:deepslate_flagstone_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}
