@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/warm_ornate_pavement_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/warm_ornate_pavement"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/warm_ornate_pavement_slab_top"
+    }
+  }
+}

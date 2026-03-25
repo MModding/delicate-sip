@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_warm_pavement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delicate_sip:mossy_warm_pavement"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:mossy_warm_pavement_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_mossy_warm_pavement",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:mossy_warm_pavement_slab"
+    ]
+  },
+  "sends_telemetry_event": false
+}

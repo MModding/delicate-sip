@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/pavement_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/pavement"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/pavement_slab_top"
+    }
+  }
+}

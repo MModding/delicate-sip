@@ -38,9 +38,22 @@ public class DelicateSipBlocks {
 	public static final BlockRelatives CHISELED_BASALT = BlockRelatives.createStone(DelicateSip.createId("chiseled_basalt"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives POLISHED_BASALT = BlockRelatives.createStone(DelicateSip.createId("polished_basalt"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
-	public static final BlockRelatives MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
-	public static final BlockRelatives ALIGNED_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
-	public static final BlockRelatives ALIGNED_WARM_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_warm_mixed_brick"), true, settings -> settings.mapColor(DyeColor.WHITE), false, false);
+	public static final BlockRelatives PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+	public static final BlockRelatives WARM_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("warm_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+
+	public static final BlockRelatives ORNATE_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("ornate_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+	public static final BlockRelatives WARM_ORNATE_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("warm_ornate_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+
+	public static final BlockRelatives MOSSY_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("mossy_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+	public static final BlockRelatives MOSSY_WARM_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("mossy_warm_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+
+	public static final BlockRelatives MOSSY_ORNATE_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("mossy_ornate_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+	public static final BlockRelatives MOSSY_WARM_ORNATE_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("mossy_warm_ornate_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
+
+
+	public static final BlockRelatives MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("mixed_brick"), true, settings -> settings.mapColor(DyeColor.GRAY), false, false);
+	public static final BlockRelatives ALIGNED_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_mixed_brick"), true, settings -> settings.mapColor(DyeColor.GRAY), false, false);
+	public static final BlockRelatives ALIGNED_WARM_MIXED_BRICKS = BlockRelatives.createStone(DelicateSip.createId("aligned_warm_mixed_brick"), true, settings -> settings.mapColor(DyeColor.GRAY), false, false);
 
 	public static final BlockRelatives DEEPSLATE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("deepslate_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
@@ -92,6 +105,14 @@ public class DelicateSipBlocks {
 		CHISELED_BASALT.register();
 		CRACKED_BASALT_BRICKS.register();
 		POLISHED_BASALT.register();
+		PAVEMENT.register();
+		WARM_PAVEMENT.register();
+		ORNATE_PAVEMENT.register();
+		WARM_ORNATE_PAVEMENT.register();
+		MOSSY_PAVEMENT.register();
+		MOSSY_WARM_PAVEMENT.register();
+		MOSSY_ORNATE_PAVEMENT.register();
+		MOSSY_WARM_ORNATE_PAVEMENT.register();
 		MIXED_BRICKS.register();
 		ALIGNED_MIXED_BRICKS.register();
 		ALIGNED_WARM_MIXED_BRICKS.register();

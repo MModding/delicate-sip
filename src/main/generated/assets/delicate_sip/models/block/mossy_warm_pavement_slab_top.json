@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "delicate_sip:block/mossy_warm_pavement",
+    "side": "delicate_sip:block/mossy_warm_pavement",
+    "top": "delicate_sip:block/mossy_warm_pavement"
+  }
+}
