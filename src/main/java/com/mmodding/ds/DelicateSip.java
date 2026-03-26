@@ -2,6 +2,7 @@ package com.mmodding.ds;
 
 import com.mmodding.ds.init.DelicateSipBlocks;
 import com.mmodding.ds.init.DelicateSipItemGroups;
+import com.mmodding.ds.init.DelicateSipItems;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.core.api.ExtendedModInitializer;
 import com.mmodding.library.core.api.management.ElementsManager;
@@ -18,6 +19,7 @@ public class DelicateSip implements ExtendedModInitializer {
 	@Override
 	public void setupManager(ElementsManager manager) {
 		manager.content(DelicateSipBlocks::register);
+		manager.content(DelicateSipItems::register);
 		manager.content(DelicateSipItemGroups::register);
 	}
 

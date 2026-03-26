@@ -441,6 +441,11 @@
   "block.delicate_sip.white_marble_tile_slab": "White Marble Tiles Slab",
   "block.delicate_sip.white_marble_tile_stairs": "White Marble Tiles Stairs",
   "block.delicate_sip.white_marble_tiles": "White Marble Tiles",
+  "item.delicate_sip.diamond_screwdriver": "Diamond Screwdriver",
+  "item.delicate_sip.netherite_screwdriver": "Netherite Screwdriver",
+  "item.delicate_sip.screwdriver": "Screwdriver",
+  "item.delicate_sip.stone_screwdriver": "Stone Screwdriver",
+  "item.delicate_sip.wooden_screwdriver": "Wooden Screwdriver",
   "itemGroup.delicate_sip.metal": "Delicate Sip - Metal",
   "itemGroup.delicate_sip.stone": "Delicate Sip - Stone",
   "itemGroup.delicate_sip.wood": "Delicate Sip - Wood"

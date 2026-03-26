@@ -3,6 +3,7 @@ package com.mmodding.ds;
 import com.mmodding.ds.block.RoundWindowBlock;
 import com.mmodding.ds.block.RoundWindowPaneBlock;
 import com.mmodding.ds.init.DelicateSipBlocks;
+import com.mmodding.ds.init.DelicateSipItems;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.datagen.api.ExtendedDataGeneratorEntrypoint;
 import com.mmodding.library.datagen.api.family.BlockFamilyProcessor;
@@ -15,7 +16,10 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.block.*;
 import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.Models;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.item.Item;
+import net.minecraft.item.ToolItem;
 import net.minecraft.registry.RegistryKeys;
 
 public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint {
@@ -31,6 +35,9 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 			.chain(BlockStateModelGenerator::registerSimpleCubeAll);
 		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
 		manager.task(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.BLOCK), DefaultLangProcessors.getClassic());
+		manager.task(DelicateSipItems.class, Item.class, DefaultContentTypes.ITEM_MODELS, item -> item instanceof ToolItem, (generator, item) -> generator.register(item, Models.HANDHELD));
+		manager.task(DelicateSipItems.class, Item.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.ITEM), DefaultLangProcessors.getClassic());
+
 	}
 
 	@Override
