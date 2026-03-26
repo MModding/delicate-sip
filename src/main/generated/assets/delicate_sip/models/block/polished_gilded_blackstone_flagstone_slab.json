@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "delicate_sip:block/polished_gilded_blackstone_flagstones",
+    "side": "delicate_sip:block/polished_gilded_blackstone_flagstones",
+    "top": "delicate_sip:block/polished_gilded_blackstone_flagstones"
+  }
+}

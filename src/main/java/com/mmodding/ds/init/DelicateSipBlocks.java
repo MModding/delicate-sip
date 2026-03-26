@@ -35,12 +35,26 @@ public class DelicateSipBlocks {
 	public static final BlockHeap WAXED_DOORS = BlockHeap.create(DelicateSip.createId("waxed_doors"), (name, settings) -> new DoorBlock(settings, DelicateSip.getVanillaSet("waxed", name, "door")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque(), DelicateSip.fromWood("waxed", "door")).withItem(new FabricItemSettings());
 	public static final BlockHeap WAXED_TRAPDOORS = BlockHeap.create(DelicateSip.createId("waxed_trapdoors"), (name, settings) -> new TrapdoorBlock(settings, DelicateSip.getVanillaSet("waxed", name, "trapdoor")), FabricBlockSettings.copyOf(Blocks.OAK_WOOD).nonOpaque(), DelicateSip.fromWood("waxed", "trapdoor")).withItem(new FabricItemSettings());
 
+	public static final BlockRelatives POLISHED_STONE = BlockRelatives.createStone(DelicateSip.createId("polished_stone"), false, settings -> settings.mapColor(DyeColor.GRAY), false, false);
+
+	public static final BlockRelatives DEEPSLATE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("deepslate_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+
 	public static final BlockRelatives BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives CRACKED_BASALT_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_basalt_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives BASALT_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("basalt_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives BASALT_TILES = BlockRelatives.createStone(DelicateSip.createId("basalt_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives CHISELED_BASALT = BlockRelatives.createStone(DelicateSip.createId("chiseled_basalt"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
 	public static final BlockRelatives POLISHED_BASALT = BlockRelatives.createStone(DelicateSip.createId("polished_basalt"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
+
+	public static final BlockRelatives POLISHED_BLACKSTONE_TILES = BlockRelatives.createStone(DelicateSip.createId("polished_blackstone_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives POLISHED_BLACKSTONE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("polished_blackstone_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+
+	public static final BlockRelatives CHISELED_GILDED_BLACKSTONE = BlockRelatives.createStone(DelicateSip.createId("chiseled_gilded_blackstone"), false, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives POLISHED_GILDED_BLACKSTONE = BlockRelatives.createStone(DelicateSip.createId("polished_gilded_blackstone"), false, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives POLISHED_GILDED_BLACKSTONE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("polished_gilded_blackstone_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives CRACKED_POLISHED_GILDED_BLACKSTONE_BRICKS = BlockRelatives.createStone(DelicateSip.createId("cracked_polished_gilded_blackstone_brick"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives POLISHED_GILDED_BLACKSTONE_TILES = BlockRelatives.createStone(DelicateSip.createId("polished_gilded_blackstone_tile"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
+	public static final BlockRelatives POLISHED_GILDED_BLACKSTONE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("polished_gilded_blackstone_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
 	public static final BlockRelatives PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
 	public static final BlockRelatives WARM_PAVEMENT = BlockRelatives.createStone(DelicateSip.createId("warm_pavement"), settings -> settings.mapColor(DyeColor.GRAY), false, false);
@@ -63,8 +77,6 @@ public class DelicateSipBlocks {
 	public static final BlockRelatives BLOOMS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("blooms_wallpaper"), settings -> settings, false, false);
 	public static final BlockRelatives FEATHERS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("feathers_wallpaper"), settings -> settings, false, false);
 	public static final BlockRelatives LEAVES_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("leaves_wallpaper"), settings -> settings, false, false);
-
-	public static final BlockRelatives DEEPSLATE_FLAGSTONES = BlockRelatives.createStone(DelicateSip.createId("deepslate_flagstone"), true, settings -> settings.mapColor(DyeColor.BLACK), false, false);
 
 	public static final BlockRelatives BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("black_marble"), settings -> settings.mapColor(DyeColor.BLACK), true, false);
 	public static final BlockRelatives SMOOTH_BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("smooth_black_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);
@@ -115,9 +127,19 @@ public class DelicateSipBlocks {
 		BASALT_BRICKS.register();
 		BASALT_FLAGSTONES.register();
 		BASALT_TILES.register();
+		POLISHED_STONE.register();
+		DEEPSLATE_FLAGSTONES.register();
 		CHISELED_BASALT.register();
 		CRACKED_BASALT_BRICKS.register();
 		POLISHED_BASALT.register();
+		POLISHED_BLACKSTONE_TILES.register();
+		POLISHED_BLACKSTONE_FLAGSTONES.register();
+		CHISELED_GILDED_BLACKSTONE.register();
+		POLISHED_GILDED_BLACKSTONE.register();
+		POLISHED_GILDED_BLACKSTONE_BRICKS.register();
+		CRACKED_POLISHED_GILDED_BLACKSTONE_BRICKS.register();
+		POLISHED_GILDED_BLACKSTONE_TILES.register();
+		POLISHED_GILDED_BLACKSTONE_FLAGSTONES.register();
 		PAVEMENT.register();
 		WARM_PAVEMENT.register();
 		ORNATE_PAVEMENT.register();
@@ -133,7 +155,6 @@ public class DelicateSipBlocks {
 		BLOOMS_WALLPAPER.register();
 		FEATHERS_WALLPAPER.register();
 		LEAVES_WALLPAPER.register();
-		DEEPSLATE_FLAGSTONES.register();
 		BLACK_MARBLE.register();
 		SMOOTH_BLACK_MARBLE.register();
 		BLACK_MARBLE_BRICKS.register();

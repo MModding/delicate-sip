@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/polished_stone_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/polished_stone"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/polished_stone_slab_top"
+    }
+  }
+}

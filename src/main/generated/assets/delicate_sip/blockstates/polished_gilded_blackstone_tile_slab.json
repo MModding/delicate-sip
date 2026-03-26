@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "delicate_sip:block/polished_gilded_blackstone_tile_slab"
+    },
+    "type=double": {
+      "model": "delicate_sip:block/polished_gilded_blackstone_tiles"
+    },
+    "type=top": {
+      "model": "delicate_sip:block/polished_gilded_blackstone_tile_slab_top"
+    }
+  }
+}
