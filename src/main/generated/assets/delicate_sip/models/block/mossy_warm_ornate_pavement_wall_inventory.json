@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "delicate_sip:block/mossy_warm_ornate_pavement"
+  }
+}

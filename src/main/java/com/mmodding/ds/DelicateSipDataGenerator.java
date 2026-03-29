@@ -21,6 +21,7 @@ import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolItem;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.BlockTags;
 
 public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint {
 
@@ -34,10 +35,11 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 			.chain(block -> block instanceof TrapdoorBlock, BlockStateModelGenerator::registerOrientableTrapdoor)
 			.chain(BlockStateModelGenerator::registerSimpleCubeAll);
 		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
+		manager.chain(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTagHandler(RegistryKeys.BLOCK), block -> block instanceof DoorBlock, (tags, block) -> tags.apply(BlockTags.DOORS).add(block))
+			.chain(block -> block instanceof TrapdoorBlock, (tags, block) -> tags.apply(BlockTags.TRAPDOORS).add(block));
 		manager.task(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.BLOCK), DefaultLangProcessors.getClassic());
 		manager.task(DelicateSipItems.class, Item.class, DefaultContentTypes.ITEM_MODELS, item -> item instanceof ToolItem, (generator, item) -> generator.register(item, Models.HANDHELD));
 		manager.task(DelicateSipItems.class, Item.class, DefaultContentTypes.getTranslationHandler(RegistryKeys.ITEM), DefaultLangProcessors.getClassic());
-
 	}
 
 	@Override
@@ -53,9 +55,10 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 
 		@Override
 		public void generateTranslations(TranslationBuilder builder) {
-			builder.add("itemGroup.delicate_sip.wood", "Delicate Sip - Wood");
-			builder.add("itemGroup.delicate_sip.stone", "Delicate Sip - Stone");
-			builder.add("itemGroup.delicate_sip.metal", "Delicate Sip - Metal");
+			builder.add("itemGroup.delicate_sip.woodwork", "Delicate Sip Woodwork");
+			builder.add("itemGroup.delicate_sip.stonework", "Delicate Sip Stonework");
+			builder.add("itemGroup.delicate_sip.furniture", "Delicate Sip Furniture");
+			builder.add("itemGroup.delicate_sip.miscellaneous", "Delicate Sip Miscellaneous");
 		}
 	}
 }

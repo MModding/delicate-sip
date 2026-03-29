@@ -10,11 +10,12 @@ import net.minecraft.block.BlockSetType;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
-import java.util.Set;
+import java.util.Map;
 
 public class DelicateSip implements ExtendedModInitializer {
 
-	public static final Set<String> WOOD_SETS = Set.of("acacia", "bamboo", "birch", "cherry", "dark_oak", "mangrove", "oak", /* "pale_oak", */ "spruce");
+	public static final List<String> WOOD_SETS = List.of("acacia", "bamboo", "birch", "cherry", "dark_oak", "mangrove", "oak", /* "pale_oak", */ "spruce");
+	public static final Map<String, BlockSetType> WOOD_SET_TYPES = Map.of("acacia", BlockSetType.ACACIA, "bamboo", BlockSetType.BAMBOO, "birch", BlockSetType.BIRCH, "cherry", BlockSetType.CHERRY, "dark_oak", BlockSetType.DARK_OAK, "mangrove", BlockSetType.MANGROVE, "oak", BlockSetType.OAK, /* "pale_oak", BlockSetType.PALE_OAK, */ "spruce", BlockSetType.SPRUCE);
 
 	@Override
 	public void setupManager(ElementsManager manager) {
@@ -26,28 +27,6 @@ public class DelicateSip implements ExtendedModInitializer {
 	@Override
 	public void onInitialize(AdvancedContainer mod) {
 		mod.logger().info("Shaping the world with a Delicate Sip of your imagination!");
-	}
-
-	public static List<String> fromWood(String suffix) {
-		return DelicateSip.WOOD_SETS.stream().map(name -> name + "_" + suffix).toList();
-	}
-
-	public static List<String> fromWood(String prefix, String suffix) {
-		return DelicateSip.WOOD_SETS.stream().map(name -> prefix + "_" + name + "_" + suffix).toList();
-	}
-
-	public static BlockSetType getVanillaSet(String name, String suffixToRemove) {
-		return BlockSetType.stream()
-			.filter(type -> type.name().equals(name.replace("_" + suffixToRemove, "")))
-			.findFirst()
-			.orElseThrow();
-	}
-
-	public static BlockSetType getVanillaSet(String prefixToRemove, String name, String suffixToRemove) {
-		return BlockSetType.stream()
-			.filter(type -> type.name().equals(name.replace(prefixToRemove + "_", "").replace("_" + suffixToRemove, "")))
-			.findFirst()
-			.orElseThrow();
 	}
 
 	public static Identifier createId(String path) {

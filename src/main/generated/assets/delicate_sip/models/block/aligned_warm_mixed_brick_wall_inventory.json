@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "delicate_sip:block/aligned_warm_mixed_bricks"
+  }
+}

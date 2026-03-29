@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "delicate_sip:block/mossy_warm_pavement"
+  }
+}

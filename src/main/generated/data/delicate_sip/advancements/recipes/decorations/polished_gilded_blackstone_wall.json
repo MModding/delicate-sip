@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_polished_gilded_blackstone": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delicate_sip:polished_gilded_blackstone"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:polished_gilded_blackstone_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_polished_gilded_blackstone",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:polished_gilded_blackstone_wall"
+    ]
+  },
+  "sends_telemetry_event": false
+}

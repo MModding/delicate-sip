@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_leaves_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "delicate_sip:leaves_wallpaper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:leaves_wallpaper_wall"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_leaves_wallpaper",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:leaves_wallpaper_wall"
+    ]
+  },
+  "sends_telemetry_event": false
+}

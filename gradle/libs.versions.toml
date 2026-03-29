@@ -8,7 +8,7 @@ fabric_loader = "0.18.4"
 yarn_mappings = "1.20.1+build.10"
 
 fabric_api = "0.92.7+1.20.1"
-mmodding = "d3628836b7"
+mmodding = "7ebb335e96"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
