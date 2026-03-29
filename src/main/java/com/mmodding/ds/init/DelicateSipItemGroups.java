@@ -11,9 +11,10 @@ import java.util.function.Predicate;
 
 public class DelicateSipItemGroups {
 
-	public static final ItemGroup METAL = DelicateSipItemGroups.createDelicateSipItemGroup("metal", "cast_iron_block", path -> path.contains("iron") || path.contains("gold"));
-	public static final ItemGroup STONE = DelicateSipItemGroups.createDelicateSipItemGroup("stone", "chiseled_black_marble", path -> DelicateSip.WOOD_SETS.stream().filter(path::contains).toList().isEmpty() && !path.contains("iron") && !path.contains("gold"));
-	public static final ItemGroup WOOD = DelicateSipItemGroups.createDelicateSipItemGroup("wood", "cherry_wainscoting", path -> !DelicateSip.WOOD_SETS.stream().filter(path::contains).toList().isEmpty());
+	public static final ItemGroup WOODWORK = DelicateSipItemGroups.createDelicateSipItemGroup("woodwork", "cherry_wainscoting", path -> !DelicateSip.WOOD_SETS.stream().filter(path::contains).toList().isEmpty());
+	public static final ItemGroup STONEWORK = DelicateSipItemGroups.createDelicateSipItemGroup("stonework", "chiseled_black_marble", path -> DelicateSip.WOOD_SETS.stream().filter(path::contains).toList().isEmpty() && !path.contains("wallpaper") && !path.contains("screwdriver"));
+	public static final ItemGroup FURNITURE = DelicateSipItemGroups.createDelicateSipItemGroup("furniture", "blooms_wallpaper", path -> path.contains("wallpaper"));
+	public static final ItemGroup MISCELLANEOUS = DelicateSipItemGroups.createDelicateSipItemGroup("miscellaneous", "screwdriver", path -> path.contains("screwdriver"));
 
 	private static ItemGroup createDelicateSipItemGroup(String category, String icon, Predicate<String> filter) {
 		return FabricItemGroup.builder()
@@ -36,9 +37,10 @@ public class DelicateSipItemGroups {
 
 	public static void register(AdvancedContainer mod) {
 		mod.register(Registries.ITEM_GROUP, factory -> {
-			factory.register("metal", METAL);
-			factory.register("stone", STONE);
-			factory.register("wood", WOOD);
+			factory.register("woodwork", WOODWORK);
+			factory.register("stonework", STONEWORK);
+			factory.register("furniture", FURNITURE);
+			factory.register("miscellaneous", MISCELLANEOUS);
 		});
 	}
 }
