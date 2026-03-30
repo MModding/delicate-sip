@@ -33,8 +33,8 @@ public class DelicateSipBlocks {
 	public static final BlockHeap PLAIN_DOORS = BlockHeap.create((wood, settings) -> new DoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "plain_" + wood + "_door", DelicateSipBlocks::createWoodSettings, DelicateSip.WOOD_SETS).withItem();
 	public static final BlockHeap PLAIN_TRAPDOORS = BlockHeap.create((wood, settings) -> new TrapdoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "plain_" + wood + "_trapdoor", DelicateSipBlocks::createWoodSettings, DelicateSip.WOOD_SETS).withItem();
 	public static final BlockHeap SPLIT_DOORS = BlockHeap.create((wood, settings) -> new DoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "split_" + wood + "_door", DelicateSipBlocks::createWoodSettings, DelicateSip.WOOD_SETS).withItem();
-	public static final BlockHeap WAXED_DOORS = BlockHeap.create((wood, settings) -> new DoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "waxed_" + wood + "_door", DelicateSipBlocks::createNonOpaqueWoodSettings, DelicateSip.WOOD_SETS).withItem();
-	public static final BlockHeap WAXED_TRAPDOORS = BlockHeap.create((wood, settings) -> new TrapdoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "waxed_" + wood + "_trapdoor", DelicateSipBlocks::createNonOpaqueWoodSettings, DelicateSip.WOOD_SETS).withItem();
+	public static final BlockHeap WAXED_DOORS = BlockHeap.create((wood, settings) -> new DoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "waxed_" + wood + "_door", wood -> DelicateSipBlocks.createNonOpaqueWoodSettings(wood).sounds(DelicateSipBlockSoundGroups.WAXED_WOOD), DelicateSip.WOOD_SETS).withItem();
+	public static final BlockHeap WAXED_TRAPDOORS = BlockHeap.create((wood, settings) -> new TrapdoorBlock(settings, DelicateSip.WOOD_SET_TYPES.get(wood)), wood -> "waxed_" + wood + "_trapdoor", wood -> DelicateSipBlocks.createNonOpaqueWoodSettings(wood).sounds(DelicateSipBlockSoundGroups.WAXED_WOOD), DelicateSip.WOOD_SETS).withItem();
 
 	public static final BlockRelatives POLISHED_STONE = BlockRelatives.createStone(DelicateSip.createId("polished_stone"), false, settings -> settings.mapColor(DyeColor.GRAY), false, false);
 
@@ -75,9 +75,9 @@ public class DelicateSipBlocks {
 
 	public static final BlockRelatives CORK = BlockRelatives.createStone(DelicateSip.createId("cork"), false, settings -> settings.mapColor(DyeColor.YELLOW), false, false);
 
-	public static final BlockRelatives BLOOMS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("blooms_wallpaper"), settings -> settings.sounds(BlockSoundGroup.WOOD), false, false);
-	public static final BlockRelatives FEATHERS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("feathers_wallpaper"), settings -> settings.sounds(BlockSoundGroup.WOOD), false, false);
-	public static final BlockRelatives LEAVES_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("leaves_wallpaper"), settings -> settings.sounds(BlockSoundGroup.WOOD), false, false);
+	public static final BlockRelatives BLOOMS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("blooms_wallpaper"), settings -> settings.sounds(BlockSoundGroup.CHERRY_LEAVES), false, false);
+	public static final BlockRelatives FEATHERS_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("feathers_wallpaper"), settings -> settings.sounds(BlockSoundGroup.CHERRY_LEAVES), false, false);
+	public static final BlockRelatives LEAVES_WALLPAPER = BlockRelatives.createStone(DelicateSip.createId("leaves_wallpaper"), settings -> settings.sounds(BlockSoundGroup.CHERRY_LEAVES), false, false);
 
 	public static final BlockRelatives BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("black_marble"), settings -> settings.mapColor(DyeColor.BLACK), true, false);
 	public static final BlockRelatives SMOOTH_BLACK_MARBLE = BlockRelatives.createStone(DelicateSip.createId("smooth_black_marble"), settings -> settings.mapColor(DyeColor.BLACK), false, false);

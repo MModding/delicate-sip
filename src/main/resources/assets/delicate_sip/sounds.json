@@ -1,0 +1,31 @@
+{
+  "block.waxed_wood.break": {
+    "sounds": [
+      "delicate_sip:block/waxed_wood/break1",
+      "delicate_sip:block/waxed_wood/break2",
+      "delicate_sip:block/waxed_wood/break3",
+      "delicate_sip:block/waxed_wood/break4",
+      "delicate_sip:block/waxed_wood/break5"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.waxed_wood.place": {
+    "sounds": [
+      "delicate_sip:block/waxed_wood/place1",
+      "delicate_sip:block/waxed_wood/place2",
+      "delicate_sip:block/waxed_wood/place3",
+      "delicate_sip:block/waxed_wood/place4"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.waxed_wood.step": {
+    "sounds": [
+      "delicate_sip:block/waxed_wood/step1",
+      "delicate_sip:block/waxed_wood/step2",
+      "delicate_sip:block/waxed_wood/step3",
+      "delicate_sip:block/waxed_wood/step4",
+      "delicate_sip:block/waxed_wood/step5"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  }
+}
