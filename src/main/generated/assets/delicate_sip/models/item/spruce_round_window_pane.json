@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "delicate_sip:block/spruce_round_window_top_left"
+    "layer0": "delicate_sip:block/spruce_round_window"
   }
 }

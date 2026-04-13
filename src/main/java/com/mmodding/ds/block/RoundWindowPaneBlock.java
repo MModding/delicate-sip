@@ -1,20 +1,20 @@
 package com.mmodding.ds.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.PaneBlock;
-import net.minecraft.state.StateManager;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
 
-public class RoundWindowPaneBlock extends PaneBlock {
+public class RoundWindowPaneBlock extends IronBarsBlock {
 
-	public RoundWindowPaneBlock(Settings settings) {
-		super(settings);
-		this.setDefaultState(this.getDefaultState().with(RoundWindowBlock.WINDOW_ROTATION, RoundWindowBlock.Rotation.TOP_LEFT));
+	public RoundWindowPaneBlock(Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.defaultBlockState().setValue(RoundWindowBlock.WINDOW_ROTATION, RoundWindowBlock.Rotation.TOP_LEFT));
 	}
 
 	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		super.appendProperties(builder);
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
 		builder.add(RoundWindowBlock.WINDOW_ROTATION);
 	}
 }

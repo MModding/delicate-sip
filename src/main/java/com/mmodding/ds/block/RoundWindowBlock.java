@@ -1,28 +1,30 @@
 package com.mmodding.ds.block;
 
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.GlassBlock;
-import net.minecraft.state.StateManager;
-import net.minecraft.state.property.EnumProperty;
-import net.minecraft.util.StringIdentifiable;
+import net.minecraft.util.StringRepresentable;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.TransparentBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.EnumProperty;
 
-public class RoundWindowBlock extends GlassBlock {
+public class RoundWindowBlock extends TransparentBlock {
 
-	public static final EnumProperty<Rotation> WINDOW_ROTATION = EnumProperty.of("window_rotation", Rotation.class);
+	public static final EnumProperty<Rotation> WINDOW_ROTATION = EnumProperty.create("window_rotation", Rotation.class);
 
-	public RoundWindowBlock(Settings settings) {
-		super(settings);
-		this.setDefaultState(this.getDefaultState().with(WINDOW_ROTATION, Rotation.TOP_LEFT));
+	public RoundWindowBlock(BlockBehaviour.Properties properties) {
+		super(properties);
+		this.registerDefaultState(this.defaultBlockState().setValue(WINDOW_ROTATION, Rotation.TOP_LEFT));
 	}
 
 	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		super.appendProperties(builder);
+	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+		super.createBlockStateDefinition(builder);
 		builder.add(WINDOW_ROTATION);
 	}
 
-	public enum Rotation implements StringIdentifiable {
+	public enum Rotation implements StringRepresentable {
+
 		TOP_LEFT("top_left"),
 		TOP_RIGHT("top_right"),
 		BOTTOM_LEFT("bottom_left"),
@@ -35,7 +37,7 @@ public class RoundWindowBlock extends GlassBlock {
 		}
 
 		@Override
-		public String asString() {
+		public String getSerializedName() {
 			return this.value;
 		}
 	}

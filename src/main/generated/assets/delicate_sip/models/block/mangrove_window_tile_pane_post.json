@@ -1,7 +1,10 @@
 {
   "parent": "minecraft:block/template_glass_pane_post",
   "textures": {
-    "edge": "delicate_sip:block/mangrove_pane_top",
+    "edge": {
+      "force_translucent": true,
+      "sprite": "delicate_sip:block/mangrove_pane_top"
+    },
     "pane": "delicate_sip:block/mangrove_window_tiles"
   }
 }

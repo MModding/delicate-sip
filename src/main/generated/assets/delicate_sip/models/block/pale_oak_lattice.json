@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/ladder",
+  "textures": {
+    "particle": "delicate_sip:block/pale_oak_lattice",
+    "texture": "delicate_sip:block/pale_oak_lattice"
+  }
+}

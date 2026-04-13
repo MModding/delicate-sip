@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:white_marble_flagstone_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_marble_flagstones": {
+      "conditions": {
+        "items": [
+          {
+            "items": "delicate_sip:white_marble_flagstones"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_white_marble_flagstones"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:white_marble_flagstone_slab"
+    ]
+  }
+}

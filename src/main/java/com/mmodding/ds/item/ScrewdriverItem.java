@@ -2,33 +2,34 @@ package com.mmodding.ds.item;
 
 import com.mmodding.ds.block.RoundWindowBlock;
 import com.mmodding.ds.block.RoundWindowPaneBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ItemUsageContext;
-import net.minecraft.item.ToolItem;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.util.ActionResult;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.UseOnContext;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class ScrewdriverItem extends ToolItem {
+public class ScrewdriverItem extends Item {
 
-	public ScrewdriverItem(ToolMaterial material, Settings settings) {
-		super(material, settings);
+	public ScrewdriverItem(Properties properties) {
+		super(properties);
 	}
 
 	@Override
-	public ActionResult useOnBlock(ItemUsageContext context) {
-		BlockState state = context.getWorld().getBlockState(context.getBlockPos());
+	public InteractionResult useOn(UseOnContext context) {
+		BlockState state = context.getLevel().getBlockState(context.getClickedPos());
 		if (state.getBlock() instanceof RoundWindowBlock || state.getBlock() instanceof RoundWindowPaneBlock) {
-			if (!context.getWorld().isClient()) {
-				context.getWorld().setBlockState(context.getBlockPos(), state.cycle(RoundWindowBlock.WINDOW_ROTATION));
+			if (!context.getLevel().isClientSide()) {
+				context.getLevel().setBlock(context.getClickedPos(), state.cycle(RoundWindowBlock.WINDOW_ROTATION), 3);
 				if (context.getPlayer() != null) {
-					context.getStack().damage(1, context.getPlayer(), player -> player.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+					context.getItemInHand().hurtAndBreak(1, (ServerLevel) context.getLevel(), (ServerPlayer) context.getPlayer(), brokenItem -> context.getPlayer().onEquippedItemBroken(brokenItem, EquipmentSlot.MAINHAND));
 				}
 			}
-			return ActionResult.SUCCESS;
+			return InteractionResult.SUCCESS;
 		}
 		else {
-			return super.useOnBlock(context);
+			return super.useOn(context);
 		}
 	}
 }

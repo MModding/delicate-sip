@@ -1,27 +1,39 @@
 package com.mmodding.ds.init;
 
+import com.mmodding.ds.DelicateSip;
 import com.mmodding.ds.item.ScrewdriverItem;
 import com.mmodding.library.core.api.AdvancedContainer;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.item.ToolMaterials;
-import net.minecraft.registry.Registries;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ToolMaterial;
+
+import java.util.function.Function;
 
 public class DelicateSipItems {
 
-	public static final ScrewdriverItem WOODEN_SCREWDRIVER = new ScrewdriverItem(ToolMaterials.WOOD, new FabricItemSettings().maxCount(1));
-	public static final ScrewdriverItem STONE_SCREWDRIVER = new ScrewdriverItem(ToolMaterials.STONE, new FabricItemSettings().maxCount(1));
-	// public static final ScrewdriverItem COPPER_SCREWDRIVER = new ScrewdriverItem(ToolMaterials.COPPER, new FabricItemSettings().maxCount(1));
-	public static final ScrewdriverItem SCREWDRIVER = new ScrewdriverItem(ToolMaterials.IRON, new FabricItemSettings().maxCount(1));
-	public static final ScrewdriverItem DIAMOND_SCREWDRIVER = new ScrewdriverItem(ToolMaterials.DIAMOND, new FabricItemSettings().maxCount(1));
-	public static final ScrewdriverItem NETHERITE_SCREWDRIVER = new ScrewdriverItem(ToolMaterials.NETHERITE, new FabricItemSettings().maxCount(1));
+	public static final Item WOODEN_SCREWDRIVER = register("wooden_screwdriver", ScrewdriverItem::new, new Item.Properties().stacksTo(1).durability(ToolMaterial.WOOD.durability()));
+	public static final Item STONE_SCREWDRIVER = register("stone_screwdriver", ScrewdriverItem::new, new Item.Properties().stacksTo(1).durability(ToolMaterial.STONE.durability()));
+	public static final Item COPPER_SCREWDRIVER = register("copper_screwdriver", ScrewdriverItem::new, new Item.Properties().stacksTo(1).durability(ToolMaterial.COPPER.durability()));
+	public static final Item SCREWDRIVER = register("screwdriver", ScrewdriverItem::new, new Item.Properties().stacksTo(1).durability(ToolMaterial.IRON.durability()));
+	public static final Item DIAMOND_SCREWDRIVER = register("diamond_screwdriver", ScrewdriverItem::new, new Item.Properties().stacksTo(1).durability(ToolMaterial.DIAMOND.durability()));
+	public static final Item NETHERITE_SCREWDRIVER = register("netherite_screwdriver", ScrewdriverItem::new, new Item.Properties().stacksTo(1).durability(ToolMaterial.NETHERITE.durability()));
 
-	public static void register(AdvancedContainer mod) {
-		mod.register(Registries.ITEM, factory -> {
-			factory.register("wooden_screwdriver", WOODEN_SCREWDRIVER);
-			factory.register("stone_screwdriver", STONE_SCREWDRIVER);
-			factory.register("screwdriver", SCREWDRIVER);
-			factory.register("diamond_screwdriver", DIAMOND_SCREWDRIVER);
-			factory.register("netherite_screwdriver", NETHERITE_SCREWDRIVER);
-		});
+	private static Item register(String path, Item.Properties properties) {
+		return register(path, Item::new, properties);
 	}
+
+	private static Item register(String path, Function<Item.Properties, Item> factory, Item.Properties properties) {
+		ResourceKey<Item> key = ResourceKey.create(Registries.ITEM, DelicateSip.createId(path));
+		Item item = factory.apply(properties.setId(key));
+		if (item instanceof BlockItem blockItem) {
+			blockItem.registerBlocks(Item.BY_BLOCK, item);
+		}
+		return Registry.register(BuiltInRegistries.ITEM, key, item);
+	}
+
+	public static void register(AdvancedContainer mod) {}
 }

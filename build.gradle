@@ -26,18 +26,20 @@ repositories {
 
 dependencies {
 	minecraft libs.minecraft
-	mappings variantOf(libs.yarn.mappings) { classifier 'v2' }
-	modImplementation libs.fabric.loader
+	implementation libs.fabric.loader
 
-	modImplementation libs.fabric.api
-	modImplementation libs.mmodding
+	implementation libs.fabric.api
+	implementation libs.mmodding
 }
 
 fabricApi {
-	configureDataGeneration()
+	configureDataGeneration() {
+		client = true
+	}
 }
 
 loom {
+	enableTransitiveAccessWideners = true
 	mods {
 		"delicate_sip" {
 			sourceSet("main")
@@ -86,7 +88,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 25
 }
 
 java {
@@ -95,8 +97,8 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_25
+	targetCompatibility = JavaVersion.VERSION_25
 }
 
 jar {

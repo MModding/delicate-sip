@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blooms_wallpaper": {
+      "conditions": {
+        "items": [
+          {
+            "items": "delicate_sip:blooms_wallpaper"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:blooms_wallpaper_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blooms_wallpaper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:blooms_wallpaper_stairs"
+    ]
+  }
+}

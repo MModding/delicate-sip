@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_warm_ornate_pavement": {
+      "conditions": {
+        "items": [
+          {
+            "items": "delicate_sip:mossy_warm_ornate_pavement"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "delicate_sip:mossy_warm_ornate_pavement_stairs"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_warm_ornate_pavement"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "delicate_sip:mossy_warm_ornate_pavement_stairs"
+    ]
+  }
+}
