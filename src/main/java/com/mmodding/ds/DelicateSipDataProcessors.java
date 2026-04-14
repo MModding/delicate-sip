@@ -62,7 +62,7 @@ public class DelicateSipDataProcessors {
 
 	static void registerDelicateSipRoundWindowPane(BlockModelGenerators generator, Block roundWindowPaneBlock) {
 		ResourceKey<Block> roundWindowPaneKey = roundWindowPaneBlock.builtInRegistryHolder().key();
-		ResourceKey<Block> roundWindowKey = roundWindowPaneKey.mapValue(value -> value.withPath(path -> path.replace("_pane", "")));
+		ResourceKey<Block> roundWindowKey = roundWindowPaneKey.mapIdentifier(value -> value.withPath(path -> path.replace("_pane", "")));
 		Block roundWindowBlock = BuiltInRegistries.BLOCK.getValueOrThrow(roundWindowKey);
 		Identifier itemModel = generator.createFlatItemModelWithBlockTexture(roundWindowPaneBlock.asItem(), roundWindowBlock);
 		generator.registerSimpleItemModel(roundWindowPaneBlock, itemModel);
@@ -79,15 +79,15 @@ public class DelicateSipDataProcessors {
 
 	static void registerDelicateSipWoodPane(BlockModelGenerators generator, Block paneBlock) {
 		ResourceKey<Block> paneKey = paneBlock.builtInRegistryHolder().key();
-		ResourceKey<Block> glassKey = paneKey.mapValue(value -> value.withPath(path -> path.replace("_pane", "")));
+		ResourceKey<Block> glassKey = paneKey.mapIdentifier(value -> value.withPath(path -> path.replace("_pane", "")));
 		if (!BuiltInRegistries.BLOCK.containsKey(glassKey)) {
-			glassKey = paneKey.mapValue(value -> value.withPath(path -> path.replace("_pane", "s")));
+			glassKey = paneKey.mapIdentifier(value -> value.withPath(path -> path.replace("_pane", "s")));
 		}
 		Block glassBlock = BuiltInRegistries.BLOCK.getValueOrThrow(glassKey);
 		String[] split = paneKey.identifier().getPath().split("_");
 		String woodSet = split[0];
 		if (woodSet.equals("dark") || woodSet.equals("pale")) woodSet += "_" + split[1];
 		String paneTop = "block/" + woodSet + "_pane_top";
-		DefaultBlockModelProcessing.createGlassPane(generator, glassBlock, paneBlock, new Material(DelicateSip.createId(paneTop)));
+		DefaultBlockModelProcessing.createPaneLike(generator, glassBlock, paneBlock, new Material(DelicateSip.createId(paneTop)));
 	}
 }
