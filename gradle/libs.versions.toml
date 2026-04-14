@@ -4,7 +4,7 @@ minecraft = "26.1"
 fabric_loader = "0.18.4"
 
 fabric_api = "0.145.4+26.1.1"
-mmodding = "7dfe9073e4"
+mmodding = "cf9d663931"
 
 [libraries]
 minecraft = { module = "com.mojang:minecraft", version.ref = "minecraft" }
