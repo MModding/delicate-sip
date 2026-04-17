@@ -20,6 +20,7 @@ public class DelicateSip implements ExtendedModInitializer {
 		manager.content(DelicateSipSoundEvents::register);
 		manager.content(DelicateSipSoundTypes::register);
 		manager.content(DelicateSipBlocks::register);
+		manager.content(DelicateSipBlockEntities::register);
 		manager.content(DelicateSipItems::register);
 		manager.content(DelicateSipItemGroups::register);
 	}

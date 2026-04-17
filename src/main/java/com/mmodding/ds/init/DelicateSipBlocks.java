@@ -1,6 +1,7 @@
 package com.mmodding.ds.init;
 
 import com.mmodding.ds.DelicateSip;
+import com.mmodding.ds.block.RockFoundryBlock;
 import com.mmodding.ds.block.RoundWindowBlock;
 import com.mmodding.ds.block.RoundWindowPaneBlock;
 import com.mmodding.library.block.api.util.BlockFactory;
@@ -14,6 +15,8 @@ import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
 public class DelicateSipBlocks {
+
+	public static final Block ROCK_FOUNDRY = register("rock_foundry", RockFoundryBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.FURNACE)).registerItem();
 
 	public static final BlockHeap BEAMS = BlockHeap.register(Block::new, wood -> wood + "_beam", DelicateSipBlocks::createWoodSettings, DelicateSip.namespace(), DelicateSip.WOOD_SETS).registerBlockItems();
 	public static final BlockHeap LATTICES = BlockHeap.register(LadderBlock::new, wood -> wood + "_lattice", DelicateSipBlocks::createNonOpaqueWoodSettings, DelicateSip.namespace(), DelicateSip.WOOD_SETS).registerBlockItems();

@@ -1,0 +1,8 @@
+classTweaker v1 official
+
+accessible field net/minecraft/client/gui/screens/inventory/FurnaceScreen LIT_PROGRESS_SPRITE Lnet/minecraft/resources/Identifier;
+accessible field net/minecraft/client/gui/screens/inventory/FurnaceScreen BURN_PROGRESS_SPRITE Lnet/minecraft/resources/Identifier;
+accessible field net/minecraft/client/gui/screens/inventory/FurnaceScreen TEXTURE Lnet/minecraft/resources/Identifier;
+accessible field net/minecraft/client/gui/screens/inventory/FurnaceScreen FILTER_NAME Lnet/minecraft/network/chat/Component;
+accessible field net/minecraft/client/gui/screens/inventory/FurnaceScreen TABS Ljava/util/List;
+accessible field net/minecraft/world/inventory/AbstractFurnaceMenu data Lnet/minecraft/world/inventory/ContainerData;

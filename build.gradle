@@ -39,7 +39,7 @@ fabricApi {
 }
 
 loom {
-	enableTransitiveAccessWideners = true
+	accessWidenerPath = file("src/main/resources/delicate_sip.classtweaker")
 	mods {
 		"delicate_sip" {
 			sourceSet("main")
@@ -69,6 +69,7 @@ mmodding {
 			it.custom("fabric-datagen", "com.mmodding.ds.DelicateSipDataGenerator")
 		}
 		addMixin("delicate_sip.mixins.json")
+		accessWidener = "delicate_sip.classtweaker"
 		withDependencies {
 			it.javaVersion = ">=" + libs.versions.java.get()
 			it.minecraftVersion = "~" + libs.versions.minecraft.get()

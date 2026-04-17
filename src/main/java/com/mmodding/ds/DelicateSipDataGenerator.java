@@ -58,6 +58,7 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 
 		@Override
 		public void generateTranslations(HolderLookup.Provider provider, TranslationBuilder builder) {
+			builder.add("container.delicate_sip.rock_foundry", "Rock Foundry");
 			builder.add("itemGroup.delicate_sip.woodwork", "Delicate Sip Woodwork");
 			builder.add("itemGroup.delicate_sip.stonework", "Delicate Sip Stonework");
 			builder.add("itemGroup.delicate_sip.furniture", "Delicate Sip Furniture");
