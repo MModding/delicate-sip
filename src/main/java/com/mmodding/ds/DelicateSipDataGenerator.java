@@ -4,6 +4,7 @@ import com.mmodding.ds.block.RockFoundryBlock;
 import com.mmodding.ds.block.RoundWindowBlock;
 import com.mmodding.ds.block.RoundWindowPaneBlock;
 import com.mmodding.ds.init.DelicateSipBlocks;
+import com.mmodding.ds.init.DelicateSipItemTags;
 import com.mmodding.ds.init.DelicateSipItems;
 import com.mmodding.ds.item.ScrewdriverItem;
 import com.mmodding.library.core.api.AdvancedContainer;
@@ -16,12 +17,16 @@ import com.mmodding.library.datagen.api.model.block.MModdingTexturedModels;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
 
 import java.util.concurrent.CompletableFuture;
@@ -50,7 +55,25 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 
 	@Override
 	public void onInitializeDataGenerator(AdvancedContainer advancedContainer, FabricDataGenerator generator, FabricDataGenerator.Pack pack) {
+		pack.addProvider(DelicateSipItemTagsProvider::new);
 		pack.addProvider(DelicateSipLanguageProvider::new);
+	}
+
+	private static class DelicateSipItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
+
+		public DelicateSipItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
+			super(output, future);
+		}
+
+		@Override
+		protected void addTags(HolderLookup.Provider registries) {
+			this.valueLookupBuilder(DelicateSipItemTags.ROCK_FOUNDRY_AFFECTED)
+				.forceAddTag(ItemTags.TERRACOTTA)
+				.forceAddTag(ConventionalItemTags.STONES)
+				.forceAddTag(ConventionalItemTags.COBBLESTONES)
+				.add(Items.CLAY_BALL)
+				.add(Items.CLAY);
+		}
 	}
 
 	private static class DelicateSipLanguageProvider extends MModdingLanguageProvider {

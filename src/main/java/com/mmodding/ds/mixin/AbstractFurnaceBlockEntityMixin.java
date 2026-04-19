@@ -2,7 +2,7 @@ package com.mmodding.ds.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import com.mmodding.ds.block.entity.RockFoundryBlockEntity;
-import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
+import com.mmodding.ds.init.DelicateSipItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +18,7 @@ public class AbstractFurnaceBlockEntityMixin {
 	private static <T> T cancelRecipeIfWrongTagInRockFoundry(T original, final ServerLevel level, final BlockPos pos, BlockState state, final AbstractFurnaceBlockEntity entity) {
 		if (entity instanceof RockFoundryBlockEntity) {
 			ItemStack ingredient = entity.getItem(0);
-			if (!ingredient.is(ConventionalItemTags.STONES) && !ingredient.is(ConventionalItemTags.COBBLESTONES)) {
+			if (!ingredient.is(DelicateSipItemTags.ROCK_FOUNDRY_AFFECTED)) {
 				return null;
 			}
 		}
