@@ -16,6 +16,8 @@ import net.minecraft.world.level.block.state.BlockState;
  */
 public class RockFoundryBlockEntity extends AbstractFurnaceBlockEntity {
 
+	public static final int ROCK_FOUNDRY_SPEED_FACTOR = 4;
+
 	private static final Component DEFAULT_NAME = Component.translatable("container.delicate_sip.rock_foundry");
 
 	public RockFoundryBlockEntity(BlockPos worldPosition, BlockState blockState) {

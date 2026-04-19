@@ -3,7 +3,7 @@
   "textures": {
     "back": "delicate_sip:block/rock_foundry_back",
     "bottom": "delicate_sip:block/rock_foundry_bottom",
-    "front": "delicate_sip:block/rock_foundry_front",
+    "front": "delicate_sip:block/rock_foundry_front_on",
     "side": "delicate_sip:block/rock_foundry_side",
     "top": "delicate_sip:block/rock_foundry_top"
   }

@@ -1,5 +1,6 @@
 package com.mmodding.ds;
 
+import com.mmodding.ds.block.RockFoundryBlock;
 import com.mmodding.ds.block.RoundWindowBlock;
 import com.mmodding.ds.block.RoundWindowPaneBlock;
 import com.mmodding.ds.init.DelicateSipBlocks;
@@ -7,11 +8,11 @@ import com.mmodding.ds.init.DelicateSipItems;
 import com.mmodding.ds.item.ScrewdriverItem;
 import com.mmodding.library.core.api.AdvancedContainer;
 import com.mmodding.library.datagen.api.ExtendedDataGeneratorEntrypoint;
-import com.mmodding.library.datagen.api.family.BlockFamilyProcessor;
 import com.mmodding.library.datagen.api.lang.DefaultLangProcessors;
 import com.mmodding.library.datagen.api.management.DataManager;
-import com.mmodding.library.datagen.api.management.DefaultContentTypes;
+import com.mmodding.library.datagen.api.management.DefaultDataHandlers;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
+import com.mmodding.library.datagen.api.model.block.MModdingTexturedModels;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
@@ -19,7 +20,6 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.data.BlockFamily;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -30,19 +30,22 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 
 	@Override
 	public void setupManager(DataManager manager) {
-		manager.chain(DelicateSipBlocks.class, Block.class, DefaultContentTypes.BLOCK_MODELS, block -> block instanceof LadderBlock, DefaultBlockModelProcessing::createLadder)
-			.chain(block -> block instanceof RoundWindowBlock, DelicateSipDataProcessors::registerDelicateSipRoundWindow)
-			.chain(block -> block instanceof RoundWindowPaneBlock, DelicateSipDataProcessors::registerDelicateSipRoundWindowPane)
-			.chain(block -> block instanceof IronBarsBlock, DelicateSipDataProcessors::registerDelicateSipWoodPane)
+		manager.chain(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_MODELS)
+			.chain(block -> block instanceof RockFoundryBlock, (generator, block) -> generator.createFurnace(block, MModdingTexturedModels.ORIENTABLE_WITH_BACK))
+			.chain(block -> block instanceof LadderBlock, DefaultBlockModelProcessing::createLadder)
+			.chain(block -> block instanceof RoundWindowBlock, DelicateSipDataProcessors::registerRoundWindow)
+			.chain(block -> block instanceof RoundWindowPaneBlock, DelicateSipDataProcessors::registerRoundWindowPane)
+			.chain(block -> block instanceof IronBarsBlock, DelicateSipDataProcessors::registerSipWoodPane)
 			.chain(block -> block instanceof DoorBlock, BlockModelGenerators::createDoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createOrientableTrapdoor)
 			.chain(BlockModelGenerators::createTrivialCube);
-		manager.task(DelicateSipBlocks.class, BlockFamily.class, DefaultContentTypes.BLOCK_FAMILIES, new BlockFamilyProcessor());
-		manager.chain(DelicateSipBlocks.class, Block.class, DefaultContentTypes.BLOCK_TAGS, block -> block instanceof DoorBlock, (tags, block) -> tags.apply(BlockTags.DOORS).add(block))
+		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_FAMILIES);
+		manager.chain(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_TAGS)
+			.chain(block -> block instanceof DoorBlock, (tags, block) -> tags.apply(BlockTags.DOORS).add(block))
 			.chain(block -> block instanceof TrapDoorBlock, (tags, block) -> tags.apply(BlockTags.TRAPDOORS).add(block));
-		manager.task(DelicateSipBlocks.class, Block.class, DefaultContentTypes.getTranslationHandler(Registries.BLOCK), DefaultLangProcessors.getClassic());
-		manager.task(DelicateSipItems.class, Item.class, DefaultContentTypes.ITEM_MODELS, item -> item instanceof ScrewdriverItem, (generator, item) -> generator.createFlatItemModel(item, ModelTemplates.FLAT_HANDHELD_ITEM));
-		manager.task(DelicateSipItems.class, Item.class, DefaultContentTypes.getTranslationHandler(Registries.ITEM), DefaultLangProcessors.getClassic());
+		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
+		manager.task(DelicateSipItems.class, DefaultDataHandlers.ITEM_MODELS, item -> item instanceof ScrewdriverItem, (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
+		manager.task(DelicateSipItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
 	}
 
 	@Override

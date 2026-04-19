@@ -28,7 +28,7 @@ public class AbstractFurnaceBlockEntityMixin {
 	@ModifyExpressionValue(method = "serverTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/crafting/AbstractCookingRecipe;cookingTime()I"))
 	private static int tickCookTimeForRockFoundry(int original, final ServerLevel level, final BlockPos pos, BlockState state, final AbstractFurnaceBlockEntity entity) {
 		if (entity instanceof RockFoundryBlockEntity) {
-			return original / 2;
+			return original / RockFoundryBlockEntity.ROCK_FOUNDRY_SPEED_FACTOR;
 		}
 		else {
 			return original;
@@ -38,7 +38,7 @@ public class AbstractFurnaceBlockEntityMixin {
 	@ModifyExpressionValue(method = "setItem", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity;getTotalCookTime(Lnet/minecraft/server/level/ServerLevel;Lnet/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity;)I"))
 	private int reduceCookTimeForRockFoundry(int original) {
 		if (((Object) this) instanceof RockFoundryBlockEntity) {
-			return original / 2;
+			return original / RockFoundryBlockEntity.ROCK_FOUNDRY_SPEED_FACTOR;
 		}
 		else {
 			return original;
