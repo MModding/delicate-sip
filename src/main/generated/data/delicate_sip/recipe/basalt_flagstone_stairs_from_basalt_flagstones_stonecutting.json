@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:basalt_flagstones",
+  "result": {
+    "id": "delicate_sip:basalt_flagstone_stairs"
+  }
+}

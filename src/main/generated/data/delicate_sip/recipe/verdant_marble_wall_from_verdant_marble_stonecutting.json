@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:verdant_marble",
+  "result": {
+    "id": "delicate_sip:verdant_marble_wall"
+  }
+}

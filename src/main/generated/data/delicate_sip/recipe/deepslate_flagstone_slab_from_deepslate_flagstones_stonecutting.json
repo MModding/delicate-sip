@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:deepslate_flagstones",
+  "result": {
+    "count": 2,
+    "id": "delicate_sip:deepslate_flagstone_slab"
+  }
+}

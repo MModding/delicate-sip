@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:warm_pavement",
+  "result": {
+    "id": "delicate_sip:warm_pavement_wall"
+  }
+}

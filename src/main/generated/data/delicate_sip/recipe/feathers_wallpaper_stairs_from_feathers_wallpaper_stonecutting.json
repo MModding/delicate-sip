@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:feathers_wallpaper",
+  "result": {
+    "id": "delicate_sip:feathers_wallpaper_stairs"
+  }
+}

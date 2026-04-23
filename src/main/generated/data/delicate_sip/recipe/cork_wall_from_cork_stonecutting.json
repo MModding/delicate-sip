@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:cork",
+  "result": {
+    "id": "delicate_sip:cork_wall"
+  }
+}

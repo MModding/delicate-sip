@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:ornate_pavement",
+  "result": {
+    "id": "delicate_sip:ornate_pavement_stairs"
+  }
+}

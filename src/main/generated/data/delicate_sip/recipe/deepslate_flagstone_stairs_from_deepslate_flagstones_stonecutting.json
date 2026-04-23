@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:deepslate_flagstones",
+  "result": {
+    "id": "delicate_sip:deepslate_flagstone_stairs"
+  }
+}

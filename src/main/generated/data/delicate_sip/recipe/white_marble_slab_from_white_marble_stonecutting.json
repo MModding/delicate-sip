@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:white_marble",
+  "result": {
+    "count": 2,
+    "id": "delicate_sip:white_marble_slab"
+  }
+}

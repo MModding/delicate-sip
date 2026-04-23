@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:cracked_basalt_bricks",
+  "result": {
+    "id": "delicate_sip:cracked_basalt_brick_stairs"
+  }
+}

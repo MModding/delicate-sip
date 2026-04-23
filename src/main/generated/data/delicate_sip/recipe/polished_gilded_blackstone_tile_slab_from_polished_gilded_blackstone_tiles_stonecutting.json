@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:polished_gilded_blackstone_tiles",
+  "result": {
+    "count": 2,
+    "id": "delicate_sip:polished_gilded_blackstone_tile_slab"
+  }
+}

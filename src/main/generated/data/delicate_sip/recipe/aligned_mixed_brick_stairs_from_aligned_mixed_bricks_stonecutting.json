@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:aligned_mixed_bricks",
+  "result": {
+    "id": "delicate_sip:aligned_mixed_brick_stairs"
+  }
+}

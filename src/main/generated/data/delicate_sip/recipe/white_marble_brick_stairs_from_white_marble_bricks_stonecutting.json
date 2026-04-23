@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:white_marble_bricks",
+  "result": {
+    "id": "delicate_sip:white_marble_brick_stairs"
+  }
+}

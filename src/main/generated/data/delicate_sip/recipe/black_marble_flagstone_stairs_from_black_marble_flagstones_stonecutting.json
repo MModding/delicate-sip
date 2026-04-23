@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:black_marble_flagstones",
+  "result": {
+    "id": "delicate_sip:black_marble_flagstone_stairs"
+  }
+}

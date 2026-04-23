@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:leaves_wallpaper",
+  "result": {
+    "id": "delicate_sip:leaves_wallpaper_stairs"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:smooth_verdant_marble",
+  "result": {
+    "count": 2,
+    "id": "delicate_sip:smooth_verdant_marble_slab"
+  }
+}

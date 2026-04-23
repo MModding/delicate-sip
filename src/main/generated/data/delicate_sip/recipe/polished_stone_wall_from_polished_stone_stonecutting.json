@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:polished_stone",
+  "result": {
+    "id": "delicate_sip:polished_stone_wall"
+  }
+}

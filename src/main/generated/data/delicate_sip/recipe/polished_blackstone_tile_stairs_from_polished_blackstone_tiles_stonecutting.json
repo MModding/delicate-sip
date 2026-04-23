@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:polished_blackstone_tiles",
+  "result": {
+    "id": "delicate_sip:polished_blackstone_tile_stairs"
+  }
+}

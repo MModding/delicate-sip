@@ -44,7 +44,7 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 			.chain(block -> block instanceof DoorBlock, BlockModelGenerators::createDoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createOrientableTrapdoor)
 			.chain(BlockModelGenerators::createTrivialCube);
-		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_FAMILIES);
+		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.chain(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_TAGS)
 			.chain(block -> block instanceof DoorBlock, (tags, block) -> tags.apply(BlockTags.DOORS).add(block))
 			.chain(block -> block instanceof TrapDoorBlock, (tags, block) -> tags.apply(BlockTags.TRAPDOORS).add(block));

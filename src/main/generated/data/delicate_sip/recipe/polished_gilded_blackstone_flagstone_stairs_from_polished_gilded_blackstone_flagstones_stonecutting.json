@@ -1,0 +1,7 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": "delicate_sip:polished_gilded_blackstone_flagstones",
+  "result": {
+    "id": "delicate_sip:polished_gilded_blackstone_flagstone_stairs"
+  }
+}
