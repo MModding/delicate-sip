@@ -2,7 +2,7 @@
   "values": [
     "delicate_sip:mixed_bricks",
     "delicate_sip:mixed_brick_wall",
-    "delicate_sip:mixed_brick_slab",
-    "delicate_sip:mixed_brick_stairs"
+    "delicate_sip:mixed_brick_stairs",
+    "delicate_sip:mixed_brick_slab"
   ]
 }

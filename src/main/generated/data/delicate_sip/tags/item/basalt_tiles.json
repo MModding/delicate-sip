@@ -2,7 +2,7 @@
   "values": [
     "delicate_sip:basalt_tiles",
     "delicate_sip:basalt_tile_wall",
-    "delicate_sip:basalt_tile_slab",
-    "delicate_sip:basalt_tile_stairs"
+    "delicate_sip:basalt_tile_stairs",
+    "delicate_sip:basalt_tile_slab"
   ]
 }

@@ -23,6 +23,7 @@ import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
@@ -44,11 +45,12 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 			.chain(block -> block instanceof DoorBlock, BlockModelGenerators::createDoor)
 			.chain(block -> block instanceof TrapDoorBlock, BlockModelGenerators::createOrientableTrapdoor)
 			.chain(BlockModelGenerators::createTrivialCube);
-		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
+		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_LOOTS, BlockLootSubProvider::dropSelf);
 		manager.chain(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_TAGS)
 			.chain(block -> block instanceof DoorBlock, (tags, block) -> tags.apply(BlockTags.DOORS).add(block))
 			.chain(block -> block instanceof TrapDoorBlock, (tags, block) -> tags.apply(BlockTags.TRAPDOORS).add(block));
 		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.getTranslationHandler(Registries.BLOCK, Block.class), DefaultLangProcessors.CLASSIC);
+		manager.task(DelicateSipBlocks.class, DefaultDataHandlers.BLOCK_RELATIVES);
 		manager.task(DelicateSipItems.class, DefaultDataHandlers.ITEM_MODELS, item -> item instanceof ScrewdriverItem, (generator, item) -> generator.generateFlatItem(item, ModelTemplates.FLAT_HANDHELD_ITEM));
 		manager.task(DelicateSipItems.class, DefaultDataHandlers.getTranslationHandler(Registries.ITEM, Item.class), DefaultLangProcessors.CLASSIC);
 	}
