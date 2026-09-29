@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:mossy_warm_pavement_wall"
+        "recipes": "delicate_sip:mossy_warm_pavement_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

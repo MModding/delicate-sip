@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:polished_blackstone_tile_stairs"
+        "recipes": "delicate_sip:polished_blackstone_tile_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

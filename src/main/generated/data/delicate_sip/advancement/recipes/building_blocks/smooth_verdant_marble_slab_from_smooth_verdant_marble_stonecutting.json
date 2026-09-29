@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:smooth_verdant_marble_slab_from_smooth_verdant_marble_stonecutting"
+        "recipes": "delicate_sip:smooth_verdant_marble_slab_from_smooth_verdant_marble_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

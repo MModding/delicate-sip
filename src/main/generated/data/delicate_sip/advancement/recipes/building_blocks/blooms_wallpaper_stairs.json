@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:blooms_wallpaper_stairs"
+        "recipes": "delicate_sip:blooms_wallpaper_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

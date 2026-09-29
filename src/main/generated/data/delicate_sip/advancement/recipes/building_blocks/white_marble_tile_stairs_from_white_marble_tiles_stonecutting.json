@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:white_marble_tile_stairs_from_white_marble_tiles_stonecutting"
+        "recipes": "delicate_sip:white_marble_tile_stairs_from_white_marble_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

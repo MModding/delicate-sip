@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:polished_stone_slab_from_polished_stone_stonecutting"
+        "recipes": "delicate_sip:polished_stone_slab_from_polished_stone_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

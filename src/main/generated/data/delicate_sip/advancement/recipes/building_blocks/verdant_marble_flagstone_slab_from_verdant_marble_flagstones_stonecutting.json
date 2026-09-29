@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:verdant_marble_flagstone_slab_from_verdant_marble_flagstones_stonecutting"
+        "recipes": "delicate_sip:verdant_marble_flagstone_slab_from_verdant_marble_flagstones_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

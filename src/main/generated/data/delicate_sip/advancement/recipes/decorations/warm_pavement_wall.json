@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:warm_pavement_wall"
+        "recipes": "delicate_sip:warm_pavement_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

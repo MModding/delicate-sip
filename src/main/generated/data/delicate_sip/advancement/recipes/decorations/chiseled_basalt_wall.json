@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:chiseled_basalt_wall"
+        "recipes": "delicate_sip:chiseled_basalt_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

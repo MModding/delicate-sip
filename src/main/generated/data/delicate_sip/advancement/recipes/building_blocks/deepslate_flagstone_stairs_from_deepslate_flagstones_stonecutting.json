@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:deepslate_flagstone_stairs_from_deepslate_flagstones_stonecutting"
+        "recipes": "delicate_sip:deepslate_flagstone_stairs_from_deepslate_flagstones_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

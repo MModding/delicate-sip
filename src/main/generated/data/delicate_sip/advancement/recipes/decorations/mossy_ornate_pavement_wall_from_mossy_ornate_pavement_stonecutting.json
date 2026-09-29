@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:mossy_ornate_pavement_wall_from_mossy_ornate_pavement_stonecutting"
+        "recipes": "delicate_sip:mossy_ornate_pavement_wall_from_mossy_ornate_pavement_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

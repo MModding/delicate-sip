@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:verdant_marble_flagstone_stairs"
+        "recipes": "delicate_sip:verdant_marble_flagstone_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

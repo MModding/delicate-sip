@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:chiseled_basalt_stairs_from_chiseled_basalt_stonecutting"
+        "recipes": "delicate_sip:chiseled_basalt_stairs_from_chiseled_basalt_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

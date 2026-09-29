@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:warm_ornate_pavement_stairs"
+        "recipes": "delicate_sip:warm_ornate_pavement_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     },

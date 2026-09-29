@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:deepslate_flagstone_wall"
+        "recipes": "delicate_sip:deepslate_flagstone_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

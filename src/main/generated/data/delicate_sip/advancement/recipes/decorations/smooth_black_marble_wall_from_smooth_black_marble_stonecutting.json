@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:smooth_black_marble_wall_from_smooth_black_marble_stonecutting"
+        "recipes": "delicate_sip:smooth_black_marble_wall_from_smooth_black_marble_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

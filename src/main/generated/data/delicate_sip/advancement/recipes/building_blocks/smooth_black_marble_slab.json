@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:smooth_black_marble_slab"
+        "recipes": "delicate_sip:smooth_black_marble_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

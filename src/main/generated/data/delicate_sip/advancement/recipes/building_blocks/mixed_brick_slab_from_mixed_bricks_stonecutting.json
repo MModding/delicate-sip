@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:mixed_brick_slab_from_mixed_bricks_stonecutting"
+        "recipes": "delicate_sip:mixed_brick_slab_from_mixed_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

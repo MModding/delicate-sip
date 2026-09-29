@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:polished_gilded_blackstone_brick_stairs_from_polished_gilded_blackstone_bricks_stonecutting"
+        "recipes": "delicate_sip:polished_gilded_blackstone_brick_stairs_from_polished_gilded_blackstone_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

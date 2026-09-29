@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:feathers_wallpaper_slab_from_feathers_wallpaper_stonecutting"
+        "recipes": "delicate_sip:feathers_wallpaper_slab_from_feathers_wallpaper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

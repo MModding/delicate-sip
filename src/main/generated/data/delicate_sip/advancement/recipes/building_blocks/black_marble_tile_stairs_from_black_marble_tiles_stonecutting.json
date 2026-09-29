@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:black_marble_tile_stairs_from_black_marble_tiles_stonecutting"
+        "recipes": "delicate_sip:black_marble_tile_stairs_from_black_marble_tiles_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

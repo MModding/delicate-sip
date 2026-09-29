@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:leaves_wallpaper_wall_from_leaves_wallpaper_stonecutting"
+        "recipes": "delicate_sip:leaves_wallpaper_wall_from_leaves_wallpaper_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

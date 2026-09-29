@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:cracked_verdant_marble_brick_stairs_from_cracked_verdant_marble_bricks_stonecutting"
+        "recipes": "delicate_sip:cracked_verdant_marble_brick_stairs_from_cracked_verdant_marble_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }

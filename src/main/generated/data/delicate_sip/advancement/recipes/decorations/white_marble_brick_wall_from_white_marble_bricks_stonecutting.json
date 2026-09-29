@@ -3,7 +3,7 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "delicate_sip:white_marble_brick_wall_from_white_marble_bricks_stonecutting"
+        "recipes": "delicate_sip:white_marble_brick_wall_from_white_marble_bricks_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
