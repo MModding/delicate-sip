@@ -2,7 +2,6 @@ package com.mmodding.ds.block;
 
 import com.mmodding.ds.block.entity.RockFoundryBlockEntity;
 import com.mmodding.ds.init.DelicateSipBlockEntities;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.MenuProvider;
@@ -16,13 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jspecify.annotations.Nullable;
 
 public class RockFoundryBlock extends AbstractFurnaceBlock {
-
-	public static final MapCodec<RockFoundryBlock> CODEC = simpleCodec(RockFoundryBlock::new);
-
-	@Override
-	public MapCodec<? extends AbstractFurnaceBlock> codec() {
-		return CODEC;
-	}
 
 	public RockFoundryBlock(Properties properties) {
 		super(properties);

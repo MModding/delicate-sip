@@ -127,7 +127,7 @@ public class DelicateSipBlocks {
 	}
 
 	public static BlockBehaviour.Properties createTransparentWoodSettings(String wood) {
-		return DelicateSipBlocks.createNonOpaqueWoodSettings(wood).isValidSpawn(Blocks::never).forceSolidOff().isSuffocating(Blocks::never).isViewBlocking(Blocks::never);
+		return DelicateSipBlocks.createNonOpaqueWoodSettings(wood).isValidSpawn(Blocks::never).forceSolidOff().isSuffocating(Blocks::never).isViewBlocking((_, _, _, _) -> false);
 	}
 
 	private static Block register(String path, BlockBehaviour.Properties properties) {

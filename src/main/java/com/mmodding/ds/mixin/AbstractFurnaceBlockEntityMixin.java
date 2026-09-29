@@ -6,6 +6,8 @@ import com.mmodding.ds.init.DelicateSipItemTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.AbstractCookingRecipe;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,8 +27,8 @@ public class AbstractFurnaceBlockEntityMixin {
 		return original;
 	}
 
-	@ModifyExpressionValue(method = "serverTick", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/crafting/AbstractCookingRecipe;cookingTime()I"))
-	private static int tickCookTimeForRockFoundry(int original, final ServerLevel level, final BlockPos pos, BlockState state, final AbstractFurnaceBlockEntity entity) {
+	@ModifyExpressionValue(method = "getTotalCookTime(Lnet/minecraft/world/item/crafting/RecipeHolder;Lnet/minecraft/world/level/block/entity/AbstractFurnaceBlockEntity;)I", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/crafting/AbstractCookingRecipe;cookingTime()I"))
+	private static int tickCookTimeForRockFoundry(int original, RecipeHolder<? extends AbstractCookingRecipe> recipe, AbstractFurnaceBlockEntity entity) {
 		if (entity instanceof RockFoundryBlockEntity) {
 			return original / RockFoundryBlockEntity.ROCK_FOUNDRY_SPEED_FACTOR;
 		}

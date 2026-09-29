@@ -14,10 +14,10 @@ import com.mmodding.library.datagen.api.management.DataManager;
 import com.mmodding.library.datagen.api.management.DefaultDataHandlers;
 import com.mmodding.library.datagen.api.model.block.DefaultBlockModelProcessing;
 import com.mmodding.library.datagen.api.model.block.MModdingTexturedModels;
+import com.mmodding.library.datagen.api.provider.BuiltinRegistryTagsProvider;
 import com.mmodding.library.datagen.api.provider.MModdingLanguageProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.model.ModelTemplates;
@@ -61,7 +61,7 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 		pack.addProvider(DelicateSipLanguageProvider::new);
 	}
 
-	private static class DelicateSipItemTagsProvider extends FabricTagsProvider.ItemTagsProvider {
+	private static class DelicateSipItemTagsProvider extends BuiltinRegistryTagsProvider.ItemTagsProvider {
 
 		public DelicateSipItemTagsProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> future) {
 			super(output, future);
@@ -69,7 +69,7 @@ public class DelicateSipDataGenerator implements ExtendedDataGeneratorEntrypoint
 
 		@Override
 		protected void addTags(HolderLookup.Provider registries) {
-			this.valueLookupBuilder(DelicateSipItemTags.ROCK_FOUNDRY_AFFECTED)
+			this.valueBuilder(DelicateSipItemTags.ROCK_FOUNDRY_AFFECTED)
 				.forceAddTag(ItemTags.TERRACOTTA)
 				.forceAddTag(ConventionalItemTags.STONES)
 				.forceAddTag(ConventionalItemTags.COBBLESTONES)

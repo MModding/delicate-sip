@@ -1,7 +1,7 @@
 package com.mmodding.ds.client;
 
 import com.mmodding.ds.DelicateSip;
-import com.mmodding.library.rendering.api.sprite.TextureAliases;
+import com.mmodding.library.resource.api.client.sprite.TextureAliases;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
